@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, shrink-to-fit=no maximum-scale=1, user-scalable=no" />
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="generator" content="">
+	<title>Snap</title>
+	<link rel="canonical" href="">
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="57x57" href="images/fav/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="images/fav/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/fav/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="images/fav/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/fav/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="images/fav/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="images/fav/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="images/fav/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/fav/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="images/fav/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/fav/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="images/fav/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/fav/favicon-16x16.png">
+	<link rel="manifest" href="images/fav/manifest.json">
+	<meta name="msapplication-TileColor" content="#F43AB0">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#F43AB0">
+	<!-- FONTS -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+		rel="stylesheet">
+	<!-- CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/media.css" rel="stylesheet">
+	<link href="css/icon.css" rel="stylesheet">
+	<!-- SCRIPT -->
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="/scripts/index.js"></script>
+	<script src="./constant.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body>
+	<!-- PRELOAD -->
+	<div id="preloader">
+		<div class="loader">
+			<span></span>
+		</div>
+	</div>
+
+	<!-- HEADER -->
+	<header class="header">
+		<div class="container">
+			<nav class="navbar navbar-expand-lg p-0">
+				<!-- LOGO -->
+				<a class="navbar-brand p-0" href="index.html">
+					<img src="images/logo.svg" class="img-fluid d-block" alt="Snap" />
+					<img src="images/logo-square.png" class="img-fluid logo-sticky d-block" alt="Snap" />
+				</a>
+				<!-- MOBILE TOGGLE -->
+				<button class="navbar-toggler collapsed d-lg-none d-flex" type="button" data-toggle="collapse"
+					data-target=".mobileMenu" aria-controls="mobileMenu" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div class="collapse navbar-collapse mobileMenu">
+					<!-- UPPER MENU -->
+					<ul id="navlist" class="navbar-nav ml-auto align-items-lg-center">
+						<li class="nav-item">
+							<a class="nav-link" href="#">FOR PARTNERS</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">SIGN UP</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">LOG IN</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<nav class="navbar navbar-bottom navbar-expand-lg p-0">
+				<div class="collapse navbar-collapse mobileMenu">
+					<!-- UPPER MENU -->
+					<ul id="taxonomy" class="navbar-nav align-items-lg-center">
+						<li class="nav-item dropdown has-megamenu">
+							<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">HAIR</a>
+							<div class="dropdown-menu megamenu">
+								<div class="row">
+									<div class="col-lg-4">
+										<div class="col-megamenu">
+											<ul class="list-unstyled">
+												<li><a href="#">Ladies haircut</a></li>
+												<li><a href="#">Men’s haircut</a></li>
+												<li><a href="#">Blow Dry</a></li>
+												<li><a href="#">Balayage & Ombre</a></li>
+												<li><a href="#">Ladies’ Hair Colouring & Highlights</a></li>
+												<li><a href="#">Children’s haircut</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-lg-4 ml-auto">
+										<div class="col-megamenu col-megamenu-link">
+											<ul class="list-unstyled">
+												<li><a href="#" class="nav-link-all text-primary">See all hair
+														treatments</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="nav-item dropdown has-megamenu">
+							<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">NAILS</a>
+							<div class="dropdown-menu megamenu">
+								<div class="row">
+									<div class="col-lg-4">
+										<div class="col-megamenu">
+											<ul class="list-unstyled">
+												<li><a href="#">Ladies haircut</a></li>
+												<li><a href="#">Men’s haircut</a></li>
+												<li><a href="#">Blow Dry</a></li>
+												<li><a href="#">Balayage & Ombre</a></li>
+												<li><a href="#">Ladies’ Hair Colouring & Highlights</a></li>
+												<li><a href="#">Children’s haircut</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-lg-4 ml-auto">
+										<div class="col-megamenu col-megamenu-link">
+											<ul class="list-unstyled">
+												<li><a href="#" class="nav-link-all text-primary">See all nail
+														treatments</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="nav-item dropdown has-megamenu">
+							<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">FACE</a>
+							<div class="dropdown-menu megamenu">
+								<div class="row">
+									<div class="col-lg-4">
+										<div class="col-megamenu">
+											<ul class="list-unstyled">
+												<li><a href="#">Ladies haircut</a></li>
+												<li><a href="#">Men’s haircut</a></li>
+												<li><a href="#">Blow Dry</a></li>
+												<li><a href="#">Balayage & Ombre</a></li>
+												<li><a href="#">Ladies’ Hair Colouring & Highlights</a></li>
+												<li><a href="#">Children’s haircut</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-lg-4 ml-auto">
+										<div class="col-megamenu col-megamenu-link">
+											<ul class="list-unstyled">
+												<li><a href="#" class="nav-link-all text-primary">See all face
+														treatments</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">BODY</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+	<!-- BANNER SECTION -->
+	<div class="section-banner" style="background-image: url('images/about.jpg');">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="section-title">
+						<h1 class="title-xl text-dark font-weight-bold text-center text-uppercase">Partner Registration
+						</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- SECTION REGISTER -->
+	<div class="section-signin bg-light">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="mt-lg-4 pt-lg-2 mb-4">
+						<div class="section-title">
+							<h2 class="title-lg text-dark font-weight-bold text-capitalize">Get More Info</h2>
+						</div>
+
+						<p class="medium text-light font-weight-medium mt-3">Create your free account instantly and
+							start receiving funeral requests.</p>
+
+						<p class="medium text-light font-weight-medium mt-3">You can then complete your profile, adding
+							a little more about your company and your services.</p>
+					</div>
+				</div>
+				<div class="col-lg-8">
+					<div class="card card-signin-profile shadow-none">
+						<p class="lead text-dark font-weight-bold mb-2">Registration Details</p>
+
+						<p class="small text-light font-weight-medium mb-4">We will use these details to send an email
+							containing the link with information on how to login to your account</p>
+
+						<form id="partnerregister" autocomplete="off">
+							<div class="row gutters-7">
+								<div class="col-lg-6">
+									<div class="mb-3">
+										<select id="dropdown" class="form-control border custom-select">
+											<option selected="" disabled="">Select</option>
+											<option>Mr.</option>
+											<option>Mrs.</option>
+											<option>Ms.</option>
+											<option>Other</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="col-lg-6"></div>
+
+								<div class="col-lg-6">
+									<div class="mb-3">
+										<input id="firstname" type="text" class="form-control border"
+											name="contactpersionfname" placeholder="Contact person first name" required />
+									</div>
+								</div>
+
+
+								<div class="col-lg-6">
+									<div class="mb-3">
+										<input id="lastname" type="text" class="form-control border"
+											name="contactpersionlname" placeholder="Contact person last name *" required />
+									</div>
+								</div>
+
+								<div class="col-lg-6">
+									<div class="mb-3">
+										<input id="email" type="email" class="form-control border" name="email"
+											placeholder="Email" required/>
+									</div>
+								</div>
+
+								<div class="col-lg-6">
+									<div class="mb-3">
+										<input id="reemail" type="email" class="form-control border" name="reemail"
+											placeholder="Re-enter Email" />
+									</div>
+								</div>
+
+								<div class="col-lg-6">
+									<div class="mb-3">
+										<input id="emailrequest" type="email" class="form-control border"
+											name="emailrequest" placeholder="Email that received request" />
+									</div>
+								</div>
+
+								<div class="col-lg-6">
+									<div class="mb-3">
+										<input id="phoneno" type="text" class="form-control border" name="phoneno"
+											placeholder="Phone"  required/>
+									</div>
+								</div>
+
+								<div class="col-lg-6">
+									<div class="mb-3">
+										<input id="password" type="password" class="form-control border" name="password"
+											placeholder="Password" required />
+									</div>
+								</div>
+
+								<div class="col-lg-6">
+									<div class="mb-3">
+										<input id="confirmpassword" type="password" class="form-control border"
+											name="confirmpassword" placeholder="Re-enter Password" required />
+									</div>
+								</div>
+
+								<div class="col-lg-12">
+									<div class="mb-3 mt-4">
+										<div class="custom-control custom-checkbox">
+											<input type="checkbox" class="custom-control-input" id="acceptpolicy">
+											<label class="custom-control-label small text-dark font-weight-medium"
+												for="acceptpolicy">Please agree with our terms and conditions</label>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-12">
+									<div>
+										<button type="submit" class="btn btn-primary btn-block">Signup Snap</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- FOOTER -->
+	<footer class="footer bg-primary">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="footer-about pr-xl-5 pr-lg-4">
+						<div class="footer-logo mb-3">
+							<img src="images/logo.svg" class="img-fluid d-block" alt="Snap">
+						</div>
+
+						<p class="text-white font-weight-medium">Lorem ipsum dolor sit amet, consetetur sadipscing
+							elitr, sed diam onumy eirmod tempor invidunt ut.</p>
+					</div>
+				</div>
+
+				<div class="col-lg-8">
+					<div id='footer-list' class="row">
+						<div class="col-lg-4">
+							<div class="footer-link mt-lg-0 mt-4">
+								<h4 class="lead font-weight-bold text-white mb-3">Company</h4>
+
+								<ul class="list-unstyled">
+									<li><a href="#">About Us</a></li>
+									<li><a href="#">Blogs</a></li>
+									<li><a href="#">Team</a></li>
+									<li><a href="#">Shop</a></li>
+									<li><a href="#">Contact</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-lg-4">
+							<div class="footer-link mt-lg-0 mt-4">
+								<h4 class="lead font-weight-bold text-white mb-3">Services</h4>
+
+								<ul class="list-unstyled">
+									<li><a href="#">Spa</a></li>
+									<li><a href="#">Hair Cut</a></li>
+									<li><a href="#">Massage</a></li>
+									<li><a href="#">Makeup</a></li>
+									<li><a href="#">Bridal</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-lg-4">
+							<div class="footer-link mt-lg-0 mt-4">
+								<h4 class="lead font-weight-bold text-white mb-3">Quick Links</h4>
+
+								<ul class="list-unstyled">
+									<li><a href="#">FAQ</a></li>
+									<li><a href="#">Appointment</a></li>
+									<li><a href="#">Terms & Conditions</a></li>
+									<li><a href="#">Privacy Policy</a></li>
+									<li><a href="#">My Account</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="pt-lg-5 pt-4 mt-lg-5 mt-4 border-top">
+						<p class="small text-center font-weight-medium text-white">&copy; 2021 Snap. All Right Reserved.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+<script>
+	$("#partnerregister").submit(function (event) {
+
+event.preventDefault();
+var form = new FormData();
+form.append("email", $("#email").val());
+form.append("first_name", $("#firstname").val());
+form.append("last_name", $("#lastname").val());
+form.append("phone", $("#phoneno").val());
+form.append("password", $("#password").val());
+form.append("c_password", $("#confirmpassword").val());
+
+
+
+$.ajax({
+	url: `${constant().baseurl}/user/register-partner`,
+	method: "POST",
+	timeout: 0,
+	headers: {
+		Accept: "application/json"
+	},
+	processData: false,
+	mimeType: "multipart/form-data",
+	contentType: false,
+	data: form,
+	success: function (customer) {
+		swal.fire({
+						title: "Partner Successfully Registered",
+						text: "Your Account has been created",
+						type: "success"
+					}).then(function () {
+						window.location = "login.html";
+					});
+	
+	},
+	error: function (e)  {
+				
+					
+				if(e.status==422){
+					Swal.fire(
+					'Failed!!',
+					'User Already Exist ',
+					'error'
+				); 
+				}
+				else if(e.status==0){
+					Swal.fire(
+					'Failed!!',
+					'Please Check your internet connection ',
+					'error'
+				); 
+
+				}
+				else{
+					Swal.fire(
+					'Failed!!',
+					'Please Check Server or Contact Admin ',
+					'error'
+				); 
+				}
+				console.log("ERROR: ", e);
+			}
+
+})
+});
+
+</script>
+<script>
+	var token= localStorage.getItem("token");
+	var username =localStorage.getItem("username");
+	if(token!=null){
+		$('#navlist').hide();
+		
+		
+	}
+</script>
+
+</body>
+
+</html>
