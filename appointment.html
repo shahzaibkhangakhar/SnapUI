@@ -35,13 +35,27 @@
 		rel="stylesheet">
 	<!-- CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/ion.rangeSlider.min.css" rel="stylesheet">
+	<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/media.css" rel="stylesheet">
 	<link href="css/icon.css" rel="stylesheet">
+
+
 	<!-- <script type="module" src="/scripts/index.js"></script> -->
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/bootstrap-datetimepicker.min.js"></script>
+	<script src="js/ion.rangeSlider.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="scripts/index.js"></script>
 	<script src="./constant.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	<script type="module"  src="logout.js"></script>
+
+
+	<script src="./constant.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script type="module" src="logout.js"></script>
 
 </head>
 
@@ -54,437 +68,493 @@
 	</div>
 
 	<div id="screenempty">
-	<!-- HEADER -->
-	<header class="header">
-		<div class="container">
-			<nav class="navbar navbar-expand-lg p-0">
-				<!-- LOGO -->
-				<a class="navbar-brand p-0" href="#">
-					<img src="images/logo.svg" class="img-fluid d-block" alt="Snap" />
-					<img src="images/logo-square.png" class="img-fluid logo-sticky d-block" alt="Snap" />
-				</a>
-
-				<!-- MOBILE TOGGLE -->
-				<button class="navbar-toggler collapsed d-lg-none d-flex ml-auto mr-3" type="button"
-					data-toggle="collapse" data-target=".mobileMenu" aria-controls="mobileMenu" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-
-				<!-- MOBILE PROFILE -->
-				<div class="nav-item dropdown dropdown-backdrop d-lg-none d-flex">
-					<a class="nav-link nav-link-profile dropdown-toggle px-0" href="#" data-toggle="dropdown">
-						<img src="images/user.jpg" class="img-fluid" alt="Nicoletta Petrodou" />
+		<!-- HEADER -->
+		<header class="header">
+			<div class="container">
+				<nav class="navbar navbar-expand-lg p-0">
+					<!-- LOGO -->
+					<a class="navbar-brand p-0" href="#">
+						<img src="images/logo.svg" class="img-fluid d-block" alt="Snap" />
+						<img src="images/logo-square.png" class="img-fluid logo-sticky d-block" alt="Snap" />
 					</a>
 
-					<div class="dropdown-menu dropdown-menu-right dropdown-profile-menu">
-						<div class="dropdown-profile-menu-image">
-							<a class="nav-link nav-link-profile pl-0 pr-0 text-right" href="#">
-								<img src="images/user.jpg" class="img-fluid" alt="Nicoletta Petrodou" />
-							</a>
+					<!-- MOBILE TOGGLE -->
+					<button class="navbar-toggler collapsed d-lg-none d-flex ml-auto mr-3" type="button"
+						data-toggle="collapse" data-target=".mobileMenu" aria-controls="mobileMenu"
+						aria-expanded="false" aria-label="Toggle navigation">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
 
-							<h4 class="lead font-weight-bold text-dark mt-3">Nicoletta Petridou</h4>
+					<!-- MOBILE PROFILE -->
+					<div class="nav-item dropdown dropdown-backdrop d-lg-none d-flex">
+						<a class="nav-link nav-link-profile dropdown-toggle px-0" href="#" data-toggle="dropdown">
+							<img src="images/user.jpg" class="img-fluid" alt="Nicoletta Petrodou" />
+						</a>
 
-							<a href="#" class="small text-primary font-weight-medium">Edit Profile</a>
+						<div class="dropdown-menu dropdown-menu-right dropdown-profile-menu">
+							<div class="dropdown-profile-menu-image">
+								<a class="nav-link nav-link-profile pl-0 pr-0 text-right" href="#">
+									<img src="images/user.jpg" class="img-fluid" alt="Nicoletta Petrodou" />
+								</a>
+
+								<h4 class="lead font-weight-bold text-dark mt-3">Nicoletta Petridou</h4>
+
+								<a href="#" class="small text-primary font-weight-medium">Edit Profile</a>
+							</div>
+
+
+							<ul class="list-unstyled pt-1">
+								<li>
+									<div class="dropdown-divider"></div>
+								</li>
+								<li>
+									<a href="appointment.html">
+										<i class="icon icon-appointment"></i> My appointments
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="icon icon-voucher"></i> My vouchers
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="icon icon-heart"></i> My favorites
+									</a>
+								</li>
+								<li>
+									<a href="setting.html">
+										<i class="icon icon-setting"></i> Settings
+									</a>
+								</li>
+								<li>
+									<div class="dropdown-divider"></div>
+								</li>
+								<li>
+									<a class="logout" href="#">
+										<i class="icon icon-logout"></i> Log out
+									</a>
+								</li>
+							</ul>
 						</div>
+					</div>
 
+					<div id="appointnav" class="collapse navbar-collapse mobileMenu">
+						<!-- UPPER MENU -->
+						<ul id="navlist" class="navbar-nav ml-auto align-items-lg-center">
+							<li id="forpartner" class="nav-item">
+								<a class="nav-link" href="#">FOR PARTNERS</a>
+							</li>
+							<li id="forsignup" class="nav-item">
+								<a class="nav-link" href="#">SIGN UP</a>
+							</li>
+							<li class="nav-item dropdown dropdown-backdrop d-lg-flex d-none">
+								<a class="nav-link nav-link-profile dropdown-toggle" href="#" data-toggle="dropdown">
+									<img src="images/user.jpg" class="img-fluid" alt="Nicoletta Petrodou" />
+								</a>
 
-						<ul class="list-unstyled pt-1">
-							<li>
-								<div class="dropdown-divider"></div>
-							</li>
-							<li>
-								<a href="appointment.html">
-									<i class="icon icon-appointment"></i> My appointments
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="icon icon-voucher"></i> My vouchers
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="icon icon-heart"></i> My favorites
-								</a>
-							</li>
-							<li>
-								<a href="setting.html">
-									<i class="icon icon-setting"></i> Settings
-								</a>
-							</li>
-							<li>
-								<div class="dropdown-divider"></div>
-							</li>
-							<li>
-								<a class="logout" href="#">
-									<i class="icon icon-logout"></i> Log out
-								</a>
+								<div class="dropdown-menu dropdown-menu-right dropdown-profile-menu">
+									<div class="dropdown-profile-menu-image">
+										<a class="nav-link nav-link-profile pl-0 text-right" href="#">
+											<img src="images/user.jpg" class="img-fluid" alt="Nicoletta Petrodou" />
+										</a>
+
+										<h4 class="lead font-weight-bold text-dark mt-3">Nicoletta Petridou</h4>
+
+										<a href="#" class="small text-primary font-weight-medium">Edit Profile</a>
+									</div>
+
+									<ul class="list-unstyled pt-1">
+										<li>
+											<div class="dropdown-divider"></div>
+										</li>
+										<li>
+											<a href="appointment.html">
+												<i class="icon icon-appointment"></i> My appointments
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<i class="icon icon-voucher"></i> My vouchers
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<i class="icon icon-heart"></i> My favorites
+											</a>
+										</li>
+										<li>
+											<a href="setting.html">
+												<i class="icon icon-setting"></i> Settings
+											</a>
+										</li>
+										<li>
+											<div class="dropdown-divider"></div>
+										</li>
+										<li>
+											<a class="logout" href="#">
+												<i class="icon icon-logout"></i> Log out
+											</a>
+										</li>
+									</ul>
+								</div>
 							</li>
 						</ul>
 					</div>
-				</div>
+				</nav>
 
-				<div id="appointnav" class="collapse navbar-collapse mobileMenu">
-					<!-- UPPER MENU -->
-					<ul id="navlist" class="navbar-nav ml-auto align-items-lg-center">
-						<li id="forpartner" class="nav-item">
-							<a class="nav-link" href="#">FOR PARTNERS</a>
-						</li>
-						<li id="forsignup" class="nav-item">
-							<a class="nav-link" href="#">SIGN UP</a>
-						</li>
-						<li class="nav-item dropdown dropdown-backdrop d-lg-flex d-none">
-							<a class="nav-link nav-link-profile dropdown-toggle" href="#" data-toggle="dropdown">
-								<img src="images/user.jpg" class="img-fluid" alt="Nicoletta Petrodou" />
+				<nav class="navbar navbar-bottom navbar-expand-lg p-0">
+					<div class="collapse navbar-collapse mobileMenu">
+						<!-- UPPER MENU -->
+						<ul class="navbar-nav align-items-lg-center">
+							<li class="nav-item dropdown has-megamenu">
+								<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">HAIR</a>
+								<div class="dropdown-menu megamenu">
+									<div class="row">
+										<div class="col-lg-4">
+											<div class="col-megamenu">
+												<ul class="list-unstyled">
+													<li><a href="#">Ladies haircut</a></li>
+													<li><a href="#">Men’s haircut</a></li>
+													<li><a href="#">Blow Dry</a></li>
+													<li><a href="#">Balayage & Ombre</a></li>
+													<li><a href="#">Ladies’ Hair Colouring & Highlights</a></li>
+													<li><a href="#">Children’s haircut</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="col-lg-4 ml-auto">
+											<div class="col-megamenu col-megamenu-link">
+												<ul class="list-unstyled">
+													<li><a href="#" class="nav-link-all text-primary">See all hair
+															treatments</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item dropdown has-megamenu">
+								<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">NAILS</a>
+								<div class="dropdown-menu megamenu">
+									<div class="row">
+										<div class="col-lg-4">
+											<div class="col-megamenu">
+												<ul class="list-unstyled">
+													<li><a href="#">Ladies haircut</a></li>
+													<li><a href="#">Men’s haircut</a></li>
+													<li><a href="#">Blow Dry</a></li>
+													<li><a href="#">Balayage & Ombre</a></li>
+													<li><a href="#">Ladies’ Hair Colouring & Highlights</a></li>
+													<li><a href="#">Children’s haircut</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="col-lg-4 ml-auto">
+											<div class="col-megamenu col-megamenu-link">
+												<ul class="list-unstyled">
+													<li><a href="#" class="nav-link-all text-primary">See all nail
+															treatments</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item dropdown has-megamenu">
+								<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">FACE</a>
+								<div class="dropdown-menu megamenu">
+									<div class="row">
+										<div class="col-lg-4">
+											<div class="col-megamenu">
+												<ul class="list-unstyled">
+													<li><a href="#">Ladies haircut</a></li>
+													<li><a href="#">Men’s haircut</a></li>
+													<li><a href="#">Blow Dry</a></li>
+													<li><a href="#">Balayage & Ombre</a></li>
+													<li><a href="#">Ladies’ Hair Colouring & Highlights</a></li>
+													<li><a href="#">Children’s haircut</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="col-lg-4 ml-auto">
+											<div class="col-megamenu col-megamenu-link">
+												<ul class="list-unstyled">
+													<li><a href="#" class="nav-link-all text-primary">See all face
+															treatments</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">BODY</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
+
+		<!-- SECTION Appointment -->
+		<div class="section-appointment bg-light">
+			<div class="container">
+				<div class="row gutters-7 justify-content-center">
+					<div class="col-lg-4">
+						<!-- UPCOMING APPOINMENT -->
+						<div class="appointment-list">
+							<h4 class="lead font-weight-bold text-dark">Upcoming appointments</h4>
+
+							<!-- REPEAT APPOINMENT -->
+							<div id="upcomming" style="	max-height: 400px; overflow-y: scroll;">
+								<div id="upcomingappointments" class="appointment-list-item upcomingappointments"
+									style="display: flex; flex-direction: column; ">
+									<div class="appointment-list-image">
+										<img src="images/user.jpg" class="img-fluid img-full" alt="" />
+									</div>
+
+									<div class="appointment-list-content">
+										<p class="text-gray font-weight-normal">22 Oct 2020 11:15</p>
+										<p class="font-weight-bold text-dark">Salon Name</p>
+										<p class="text-dark">Hair color</p>
+									</div>
+								</div>
+
+
+							</div>
+
+						</div>
+						<br>
+						<br>
+
+						<!-- Pasr APPOINMENT -->
+						<div class="appointment-list">
+							<h4 class="lead font-weight-bold text-dark">Past appointments</h4>
+
+							<!-- REPEAT APPOINMENT -->
+							<div id="passt" style="	max-height: 300px; overflow-y: scroll;">
+								<div id="pastappointments" class="appointment-list-item pastappointments"
+									style="display: flex; flex-direction: column; ">
+									<div class="appointment-list-image">
+										<img src="images/user.jpg" class="img-fluid img-full" alt="" />
+									</div>
+
+									<div class="appointment-list-content">
+										<p class="text-gray font-weight-normal">22 Oct 2020 11:15</p>
+										<p class="font-weight-bold text-dark">Salon Name</p>
+										<p class="text-dark">Hair color</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="appointmentdetails" class="col-lg-7" style="margin-top: 35px;">
+						<!-- APPOINMENT DETAIL -->
+						<div class="appointments-detail">
+							<div id="datetimeid" class="section-title">
+								<h4 id='appointment_time' class="title-md font-weight-bold text-dark">Thursday, 22 Oct
+									2020
+									at 11:15</h4>
+							</div>
+
+							<p id="status" class="small text-primary font-weight-medium mt-2">Confirmed</p>
+
+							<!-- SALOON DETAIL -->
+
+							<div id="appointments" class="appointments-detail-options">
+								<div class="row gutters-7 my-4 py-1">
+									<div class="col-lg-7">
+										<h4 id="name" class="text-dark font-weight-bold">Salon Name</h4>
+
+										<p id="addr" class="small font-weight-normal mt-1">Adress Lorem Ipsum</p>
+									</div>
+
+									<div class="col-lg-5">
+										<div class="appointments-detail-list mt-lg-0 mt-3">
+											<div class="appointments-detail-list-item">
+												<a href="#">
+													<i class="icon icon-map"></i>
+													<span class="">Directions</span>
+												</a>
+											</div>
+
+											<div id="Reschedulebooking" class="appointments-detail-list-item">
+												<a href="#">
+													<i class="icon icon-appointment"></i>
+													<span class="">Reschedule</span>
+												</a>
+											</div>
+
+											<div id="Cancelbooking" class="appointments-detail-list-item">
+												<a href="#">
+													<i class="icon icon-cancel"></i>
+													<span class="">Cancel</span>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- APPOINMENT TOTLA -->
+							<div id="totalappointment" class="appointments-detail-total">
+								<div id="totaldetails" class="row gutters-7">
+									<div class="col-8">
+										<p class="font-weight-bold text-dark">Roots colour</p>
+										<p class="font-weight-normal text-dark">1 hr</p>
+									</div>
+									<div class="col-4">
+										<p class="font-weight-normal text-dark text-right">€30</p>
+									</div>
+								</div>
+
+								<div id="totalpriceid" class="row gutters-7">
+									<div class="col-8">
+										<p class="font-weight-bold text-dark">Order Total</p>
+									</div>
+									<div class="col-4">
+										<p id="total_paise" class="font-weight-bold text-dark text-right">€30</p>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="Rescheduleshow" class="container-fluid px-0 section-about-banner"
+			style="background-image: url('images/banner01.png'); display: none;">
+			<div class="row">
+				<div class="col-lg-5 ml-auto">
+					<!-- ABOUT SERVICE CARD -->
+					<div class="card-service card-service-sticky is-sticky">
+						<div class="section-title pb-3 border-bottom text-lg-left text-center">
+							<i class="icon icon-close d-lg-none"></i>
+							<a href="appointment.html">
+								<i class="icon icon-left-arrow"></i>
 							</a>
-
-							<div class="dropdown-menu dropdown-menu-right dropdown-profile-menu">
-								<div class="dropdown-profile-menu-image">
-									<a class="nav-link nav-link-profile pl-0 text-right" href="#">
-										<img src="images/user.jpg" class="img-fluid" alt="Nicoletta Petrodou" />
-									</a>
-
-									<h4 class="lead font-weight-bold text-dark mt-3">Nicoletta Petridou</h4>
-
-									<a href="#" class="small text-primary font-weight-medium">Edit Profile</a>
-								</div>
-
-								<ul class="list-unstyled pt-1">
-									<li>
-										<div class="dropdown-divider"></div>
-									</li>
-									<li>
-										<a href="appointment.html">
-											<i class="icon icon-appointment"></i> My appointments
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<i class="icon icon-voucher"></i> My vouchers
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<i class="icon icon-heart"></i> My favorites
-										</a>
-									</li>
-									<li>
-										<a href="setting.html">
-											<i class="icon icon-setting"></i> Settings
-										</a>
-									</li>
-									<li>
-										<div class="dropdown-divider"></div>
-									</li>
-									<li>
-										<a class="logout" href="#">
-											<i class="icon icon-logout"></i> Log out
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</nav>
-
-			<nav class="navbar navbar-bottom navbar-expand-lg p-0">
-				<div class="collapse navbar-collapse mobileMenu">
-					<!-- UPPER MENU -->
-					<ul class="navbar-nav align-items-lg-center">
-						<li class="nav-item dropdown has-megamenu">
-							<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">HAIR</a>
-							<div class="dropdown-menu megamenu">
-								<div class="row">
-									<div class="col-lg-4">
-										<div class="col-megamenu">
-											<ul class="list-unstyled">
-												<li><a href="#">Ladies haircut</a></li>
-												<li><a href="#">Men’s haircut</a></li>
-												<li><a href="#">Blow Dry</a></li>
-												<li><a href="#">Balayage & Ombre</a></li>
-												<li><a href="#">Ladies’ Hair Colouring & Highlights</a></li>
-												<li><a href="#">Children’s haircut</a></li>
-											</ul>
-										</div>
-									</div>
-									<div class="col-lg-4 ml-auto">
-										<div class="col-megamenu col-megamenu-link">
-											<ul class="list-unstyled">
-												<li><a href="#" class="nav-link-all text-primary">See all hair
-														treatments</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li class="nav-item dropdown has-megamenu">
-							<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">NAILS</a>
-							<div class="dropdown-menu megamenu">
-								<div class="row">
-									<div class="col-lg-4">
-										<div class="col-megamenu">
-											<ul class="list-unstyled">
-												<li><a href="#">Ladies haircut</a></li>
-												<li><a href="#">Men’s haircut</a></li>
-												<li><a href="#">Blow Dry</a></li>
-												<li><a href="#">Balayage & Ombre</a></li>
-												<li><a href="#">Ladies’ Hair Colouring & Highlights</a></li>
-												<li><a href="#">Children’s haircut</a></li>
-											</ul>
-										</div>
-									</div>
-									<div class="col-lg-4 ml-auto">
-										<div class="col-megamenu col-megamenu-link">
-											<ul class="list-unstyled">
-												<li><a href="#" class="nav-link-all text-primary">See all nail
-														treatments</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li class="nav-item dropdown has-megamenu">
-							<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">FACE</a>
-							<div class="dropdown-menu megamenu">
-								<div class="row">
-									<div class="col-lg-4">
-										<div class="col-megamenu">
-											<ul class="list-unstyled">
-												<li><a href="#">Ladies haircut</a></li>
-												<li><a href="#">Men’s haircut</a></li>
-												<li><a href="#">Blow Dry</a></li>
-												<li><a href="#">Balayage & Ombre</a></li>
-												<li><a href="#">Ladies’ Hair Colouring & Highlights</a></li>
-												<li><a href="#">Children’s haircut</a></li>
-											</ul>
-										</div>
-									</div>
-									<div class="col-lg-4 ml-auto">
-										<div class="col-megamenu col-megamenu-link">
-											<ul class="list-unstyled">
-												<li><a href="#" class="nav-link-all text-primary">See all face
-														treatments</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">BODY</a>
-						</li>
-					</ul>
-				</div>
-			</nav>
-		</div>
-	</header>
-
-	<!-- SECTION Appointment -->
-	<div class="section-appointment bg-light">
-		<div class="container">
-			<div class="row gutters-7 justify-content-center">
-				<div class="col-lg-4">
-					<!-- UPCOMING APPOINMENT -->
-					<div class="appointment-list">
-						<h4 class="lead font-weight-bold text-dark">Upcoming appointments</h4>
-
-						<!-- REPEAT APPOINMENT -->
-						<div id="upcomming" style="	max-height: 400px; overflow-y: scroll;">
-							<div id="upcomingappointments" class="appointment-list-item upcomingappointments"
-								style="display: flex; flex-direction: column; ">
-								<div class="appointment-list-image">
-									<img src="images/user.jpg" class="img-fluid img-full" alt="" />
-								</div>
-
-								<div class="appointment-list-content">
-									<p class="text-gray font-weight-normal">22 Oct 2020 11:15</p>
-									<p class="font-weight-bold text-dark">Salon Name</p>
-									<p class="text-dark">Hair color</p>
-								</div>
-							</div>
-
-
+							<h2 class="title-lg text-dark font-weight-bold">Reschedule</h2>
 						</div>
+					
 
-					</div>
-					<br>
-					<br>
+						<div></div>
 
-					<!-- Pasr APPOINMENT -->
-					<div class="appointment-list">
-						<h4 class="lead font-weight-bold text-dark">Past appointments</h4>
-
-						<!-- REPEAT APPOINMENT -->
-						<div id="passt" style="	max-height: 300px; overflow-y: scroll;">
-							<div id="pastappointments" class="appointment-list-item pastappointments"
-								style="display: flex; flex-direction: column; ">
-								<div class="appointment-list-image">
-									<img src="images/user.jpg" class="img-fluid img-full" alt="" />
-								</div>
-
-								<div class="appointment-list-content">
-									<p class="text-gray font-weight-normal">22 Oct 2020 11:15</p>
-									<p class="font-weight-bold text-dark">Salon Name</p>
-									<p class="text-dark">Hair color</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div id="appointmentdetails" class="col-lg-7" style="margin-top: 35px;">
-					<!-- APPOINMENT DETAIL -->
-					<div class="appointments-detail">
-						<div id="datetimeid" class="section-title">
-							<h4 id='appointment_time' class="title-md font-weight-bold text-dark">Thursday, 22 Oct 2020
-								at 11:15</h4>
-						</div>
-
-						<p id="status" class="small text-primary font-weight-medium mt-2">Confirmed</p>
-
-						<!-- SALOON DETAIL -->
-
-						<div id="appointments" class="appointments-detail-options">
-							<div class="row gutters-7 my-4 py-1">
-								<div class="col-lg-7">
-									<h4 id="name" class="text-dark font-weight-bold">Salon Name</h4>
-
-									<p id="addr" class="small font-weight-normal mt-1">Adress Lorem Ipsum</p>
-								</div>
-
-								<div class="col-lg-5">
-									<div class="appointments-detail-list mt-lg-0 mt-3">
-										<div class="appointments-detail-list-item">
-											<a href="#">
-												<i class="icon icon-map"></i>
-												<span class="">Directions</span>
-											</a>
-										</div>
-
-										<div id="Reschedulebooking" class="appointments-detail-list-item">
-											<a href="#">
-												<i class="icon icon-appointment"></i>
-												<span class="">Reschedule</span>
-											</a>
-										</div>
-
-										<div id="Cancelbooking" class="appointments-detail-list-item">
-											<a  href="#">
-												<i class="icon icon-cancel"></i>
-												<span class="">Cancel</span>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- APPOINMENT TOTLA -->
-						<div id="totalappointment" class="appointments-detail-total">
-							<div id="totaldetails" class="row gutters-7">
-								<div class="col-8">
-									<p class="font-weight-bold text-dark">Roots colour</p>
-									<p class="font-weight-normal text-dark">1 hr</p>
-								</div>
-								<div class="col-4">
-									<p class="font-weight-normal text-dark text-right">€30</p>
-								</div>
+						<form id="Rescheduleform" autocomplete="off">
+							
+							<div class="filter-box mb-3">
+								<i class="icon icon-calendar"></i>
+								<input id="dateinput" type="date" class="form-control border datepicker"
+									placeholder="Date" required />
 							</div>
 
-							<div id="totalpriceid" class="row gutters-7">
-								<div class="col-8">
-									<p class="font-weight-bold text-dark">Order Total</p>
-								</div>
-								<div class="col-4">
-									<p id="total_paise" class="font-weight-bold text-dark text-right">€30</p>
-								</div>
+							<div class="filter-box mb-3">
+								<i class="icon icon-clock"></i>
+								<input id="timeinput" type="time" class="form-control border timepicker"
+									placeholder="Time" required />
 							</div>
-						</div>
 
+							<div class="d-flex justify-content-between align-items-center mb-3">
+								<h4 class="card-service-title lead font-weight-bold text-dark">Total
+								</h4>
+								<p id="total" class="card-service-price lead font-weight-bold text-dark text-right">
+									€0</p>
+							</div>
+
+							<div class="button-booknow">
+								<button class="btn btn-dark btn-block ">
+									<span class="cst-cart-icon">
+										<img src="./images/cart-white.png" alt="">
+									</span>
+									<span class="book-now-text">Book Now</span>
+									<span class="cst-total-amount"></span>
+								</button>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+		<div></div>
 
-	<!-- FOOTER -->
-	<footer class="footer bg-primary">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4">
-					<div class="footer-about pr-xl-5 pr-lg-4">
-						<div class="footer-logo mb-3">
-							<img src="images/logo.svg" class="img-fluid d-block" alt="Snap">
+		<!-- FOOTER -->
+		<footer class="footer bg-primary">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="footer-about pr-xl-5 pr-lg-4">
+							<div class="footer-logo mb-3">
+								<img src="images/logo.svg" class="img-fluid d-block" alt="Snap">
+							</div>
+
+							<p class="text-white font-weight-medium">Lorem ipsum dolor sit amet, consetetur sadipscing
+								elitr, sed diam onumy eirmod tempor invidunt ut.</p>
 						</div>
+					</div>
 
-						<p class="text-white font-weight-medium">Lorem ipsum dolor sit amet, consetetur sadipscing
-							elitr, sed diam onumy eirmod tempor invidunt ut.</p>
+					<div class="col-lg-8">
+						<div id='footer-list' class="row">
+							<div class="col-lg-4">
+								<div class="footer-link mt-lg-0 mt-4">
+									<h4 class="lead font-weight-bold text-white mb-3">Company</h4>
+
+									<ul class="list-unstyled">
+										<li><a href="#">About Us</a></li>
+										<li><a href="#">Blogs</a></li>
+										<li><a href="#">Team</a></li>
+										<li><a href="#">Shop</a></li>
+										<li><a href="#">Contact</a></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="col-lg-4">
+								<div class="footer-link mt-lg-0 mt-4">
+									<h4 class="lead font-weight-bold text-white mb-3">Services</h4>
+
+									<ul class="list-unstyled">
+										<li><a href="#">Spa</a></li>
+										<li><a href="#">Hair Cut</a></li>
+										<li><a href="#">Massage</a></li>
+										<li><a href="#">Makeup</a></li>
+										<li><a href="#">Bridal</a></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="col-lg-4">
+								<div class="footer-link mt-lg-0 mt-4">
+									<h4 class="lead font-weight-bold text-white mb-3">Quick Links</h4>
+
+									<ul class="list-unstyled">
+										<li><a href="#">FAQ</a></li>
+										<li><a href="#">Appointment</a></li>
+										<li><a href="#">Terms & Conditions</a></li>
+										<li><a href="#">Privacy Policy</a></li>
+										<li><a href="#">My Account</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 
-				<div class="col-lg-8">
-					<div id='footer-list' class="row">
-						<div class="col-lg-4">
-							<div class="footer-link mt-lg-0 mt-4">
-								<h4 class="lead font-weight-bold text-white mb-3">Company</h4>
-
-								<ul class="list-unstyled">
-									<li><a href="#">About Us</a></li>
-									<li><a href="#">Blogs</a></li>
-									<li><a href="#">Team</a></li>
-									<li><a href="#">Shop</a></li>
-									<li><a href="#">Contact</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="col-lg-4">
-							<div class="footer-link mt-lg-0 mt-4">
-								<h4 class="lead font-weight-bold text-white mb-3">Services</h4>
-
-								<ul class="list-unstyled">
-									<li><a href="#">Spa</a></li>
-									<li><a href="#">Hair Cut</a></li>
-									<li><a href="#">Massage</a></li>
-									<li><a href="#">Makeup</a></li>
-									<li><a href="#">Bridal</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="col-lg-4">
-							<div class="footer-link mt-lg-0 mt-4">
-								<h4 class="lead font-weight-bold text-white mb-3">Quick Links</h4>
-
-								<ul class="list-unstyled">
-									<li><a href="#">FAQ</a></li>
-									<li><a href="#">Appointment</a></li>
-									<li><a href="#">Terms & Conditions</a></li>
-									<li><a href="#">Privacy Policy</a></li>
-									<li><a href="#">My Account</a></li>
-								</ul>
-							</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="pt-lg-5 pt-4 mt-lg-5 mt-4 border-top">
+							<p class="small text-center font-weight-medium text-white">&copy; 2021 Snap. All Right
+								Reserved.
+							</p>
 						</div>
 					</div>
 				</div>
 			</div>
-
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="pt-lg-5 pt-4 mt-lg-5 mt-4 border-top">
-						<p class="small text-center font-weight-medium text-white">&copy; 2021 Snap. All Right Reserved.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+		</footer>
 	</div>
 
 	<!-- SCRIPT -->
@@ -493,124 +563,126 @@
 	<script src="js/main.js"></script>
 
 	<script>
-//............................................................................. header .........................................................................
-var token = localStorage.getItem("token");
-if(token==null){
-var form = new FormData()
-form.append('site_id', '1')
-form.append('slug', 'header')
+		//............................................................................. header .........................................................................
+		var token = localStorage.getItem("token");
+		if (token == null) {
+			var form = new FormData()
+			form.append('site_id', '1')
+			form.append('slug', 'header')
 
 
-var settings = {
-  url: `${constant().baseurl}/navigation/get`,
-  method: 'POST',
-  timeout: 0,
-  headers: {
-    Accept: 'application/json'
-  },
-  processData: false,
-  mimeType: 'multipart/form-data',
-  contentType: false,
-  data: form
-}
+			var settings = {
+				url: `${constant().baseurl}/navigation/get`,
+				method: 'POST',
+				timeout: 0,
+				headers: {
+					Accept: 'application/json'
+				},
+				processData: false,
+				mimeType: 'multipart/form-data',
+				contentType: false,
+				data: form
+			}
 
-$.ajax(settings).done(function (response) {
-	
-	swal.fire({
-						title: "Error, User not logged in",
-						text: "You need to loggin first",
-						type: "error"
-					}).then(function () {
-						window.location = "login.html";
-					});
-  // console.log(response);
-  $('#screenempty')
-    .hide();
-  $('#navlist')
-    .empty()
-    .append(
-      JSON.parse(response).data.map(RD => {
-        return `<li class="nav-item">
+			$.ajax(settings).done(function (response) {
+
+				swal.fire({
+					title: "Error, User not logged in",
+					text: "You need to loggin first",
+					type: "error"
+				}).then(function () {
+					window.location = "login.html";
+				});
+				// console.log(response);
+				$('#screenempty')
+					.hide();
+				$('#navlist')
+					.empty()
+					.append(
+						JSON.parse(response).data.map(RD => {
+							return `<li class="nav-item">
                     <a class="nav-link" href="${RD.url}">${RD.title}</a>
                 </li>`
-      })
-    )
-})
-$.ajax(settings).fail(function (res, err) {
-  console.log('Response', res.status)
-  if (res.status == 0) {
-    console.log('Header internet issue')
-    Swal.fire('Failed!!', 'Please Check your internet connection ', 'error')
-  } else {
-    Swal.fire('Failed!!', 'Please Check Server or Contact Admin ', 'error')
-  }
-})
-}
-else{
-//hide partner and signup tabs
+						})
+					)
+			})
+			$.ajax(settings).fail(function (res, err) {
+				console.log('Response', res.status)
+				if (res.status == 0) {
+					console.log('Header internet issue')
+					Swal.fire('Failed!!', 'Please Check your internet connection ', 'error')
+				} else {
+					Swal.fire('Failed!!', 'Please Check Server or Contact Admin ', 'error')
+				}
+			})
+		}
+		else {
+			//hide partner and signup tabs
 
-	$("#forpartner").hide();
-	$("#forsignup").hide();
-}
+			$("#forpartner").hide();
+			$("#forsignup").hide();
+		}
 //....................................................................................................................................................................
 	</script>
-<script>
-//................................................................................footer...............................................................................
-var form = new FormData()
-form.append('site_id', '1')
-form.append('slug', 'footer')
+	<script>
+		//................................................................................footer...............................................................................
+		var form = new FormData()
+		form.append('site_id', '1')
+		form.append('slug', 'footer')
 
-var settings1 = {
-  url: `${constant().baseurl}/navigation/get`,
-  method: 'POST',
-  timeout: 0,
-  headers: {
-    Accept: 'application/json'
-  },
-  processData: false,
-  mimeType: 'multipart/form-data',
-  contentType: false,
-  data: form
-}
+		var settings1 = {
+			url: `${constant().baseurl}/navigation/get`,
+			method: 'POST',
+			timeout: 0,
+			headers: {
+				Accept: 'application/json'
+			},
+			processData: false,
+			mimeType: 'multipart/form-data',
+			contentType: false,
+			data: form
+		}
 
-$.ajax(settings1).done(function (response) {
-  // console.log(response);
-  $('#footer-list')
-    .empty()
-    .append(
-      JSON.parse(response).data.map(RD => {
-        return `<div class="col-lg-4">
+		$.ajax(settings1).done(function (response) {
+			// console.log(response);
+			$('#footer-list')
+				.empty()
+				.append(
+					JSON.parse(response).data.map(RD => {
+						return `<div class="col-lg-4">
                     <div class="footer-link mt-lg-0 mt-4">
-                        <h4 class="lead font-weight-bold text-white mb-3">${
-                          RD.title
-                        }</h4>
+                        <h4 class="lead font-weight-bold text-white mb-3">${RD.title
+							}</h4>
 
                         <ul class="list-unstyled">
                             ${RD.subtabs.map(
-                              ST =>
-                                `<li><a href="${ST.url == null ? "#" : ST.url}">${ST.title}</a></li>`
-                            )}
+								ST =>
+									`<li><a href="${ST.url == null ? "#" : ST.url}">${ST.title}</a></li>`
+							)}
                             
                         </ul>
                     </div>
                 </div>`
-      })
-    )
-})
-$.ajax(settings1).fail(function (res, err) {
-  console.log('Response', res.status)
-  if (res.status == 0) {
-    console.log('Footer internet issue')
-    Swal.fire('Failed!!', 'Please Check your internet connection ', 'error')
-  } else {
-    Swal.fire('Failed!!', 'Please Check Server or Contact Admin ', 'error')
-  }
-})
+					})
+				)
+		})
+		$.ajax(settings1).fail(function (res, err) {
+			console.log('Response', res.status)
+			if (res.status == 0) {
+				console.log('Footer internet issue')
+				Swal.fire('Failed!!', 'Please Check your internet connection ', 'error')
+			} else {
+				Swal.fire('Failed!!', 'Please Check Server or Contact Admin ', 'error')
+			}
+		})
 //.....................................................................footer end here..............................................................................
-</script>
+	</script>
 	<script>
-//......................................................................get bookings..................................................................................
+		//......................................................................get bookings..................................................................................
 		var token = localStorage.getItem("token");
+		console.log(token)
+
+
 		var form = new FormData();
 		var settings = {
 			"url": `${constant().baseurl}/customer/booking/my-bookings`,
@@ -630,7 +702,7 @@ $.ajax(settings1).fail(function (res, err) {
 			//console.log(response);
 
 
-			//upcoming appointments
+			//.......................................................................upcoming appointments.....................................................................
 			window.upcoming_appointment = JSON.parse(response).data.upcoming_appointment;
 			console.log(window.upcoming_appointment)
 			$("#upcomming").empty().append(JSON.parse(response).data.upcoming_appointment.map(AB => {
@@ -654,11 +726,11 @@ $.ajax(settings1).fail(function (res, err) {
 			}))
 
 
-//......................................................................... past appointments..................................................................................
+			//......................................................................... past appointments..................................................................................
 			window.past_appointment = JSON.parse(response).data.past_appointment;
 			$("#passt").empty().append(JSON.parse(response).data.past_appointment.map(AB => {
 				return `
-	<div  class="appointment-list-item pastappointments" id="${AB.id}" name="${AB.venue.name}" time="${AB.service_time}" style="display: flex; ">
+		<div  class="appointment-list-item pastappointments" id="${AB.id}" name="${AB.venue.name}" time="${AB.service_time}" style="display: flex; ">
 	
 						  <div class="appointment-list-image">
 							  <img src="images/user.jpg" class="img-fluid img-full" alt="" />
@@ -675,11 +747,13 @@ $.ajax(settings1).fail(function (res, err) {
 			}));
 
 
-//.......................................................upcoming appointments click kr k un ki details show hn gi..........................................................
+			//.......................................................upcoming appointments click kr k un ki details show hn gi..........................................................
 			$(document).ready(() => {
+
+				//.............................................................cancel booking button...........................................................................
 				$("#Cancelbooking").click(function (event) {
 					if (window.selectedid == null) return;
- 
+
 					console.log("object id", window.selectedid)
 
 
@@ -707,20 +781,23 @@ $.ajax(settings1).fail(function (res, err) {
 							'Booking Cancelled Successfully',
 							'success'
 						).then(function () {
-							 window.location.replace("appointment.html")
+							window.location.replace("appointment.html")
 						});
 					});
 
-				})
+				});
+
+
 
 				$('.upcomingappointments').click(function (event) {
 					let obj = window.upcoming_appointment.find(W => W.id == event.target.id);
 					var token = localStorage.getItem("token");
-				
+
 					console.log(obj);
 					console.log(obj.id);
 					if (obj == null) return;
 					window.selectedid = obj.id;
+					console.log("this is the id of that booking", window.selectedid)
 					$("#appointment_time").html(obj.service_time);
 					$("#status").html(obj.booking_status);
 					$("#name").html(obj.venue.name);
@@ -739,7 +816,88 @@ $.ajax(settings1).fail(function (res, err) {
 
 
 
-				})
+
+
+
+				});
+
+
+				//..............................................................Reschedule.................................................................
+
+				$('#Reschedulebooking').click(function (event) {
+					$("#Rescheduleshow").show();
+					console.log("this is the id of that booking", window.selectedid);
+					$("#Rescheduleform").submit(function (event) {
+						event.preventDefault();
+						var d = new Date($("#dateinput").val());
+						const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+						localStorage.setItem("rescheduledatewithdayandtime", d.toLocaleDateString(undefined, options));
+
+						//date format converter
+						var date = new Date($("#dateinput").val());
+						var dateString = new Date(date.getTime() - (date.getTimezoneOffset() * 60000))
+							.toISOString()
+							.split("T")[0];
+
+
+
+						//time coverter from 12 hours to 24 hours
+
+						const convertTime = timeStr => {
+							const [time, modifier] = timeStr.split(' ');
+							let [hours, minutes] = time.split(':');
+							if (hours === '12') {
+								hours = '00';
+							}
+							if (modifier === 'PM') {
+								hours = parseInt(hours, 10) + 12;
+							}
+							return `${hours}:${minutes}`;
+						};
+
+
+
+						console.log("one type of date time converter", dateString);
+						console.log("one type of date time converter", convertTime($("#timeinput").val()));
+						var datetime = dateString + " " + convertTime($("#timeinput").val());
+						console.log(datetime)
+
+						var form = new FormData();
+						form.append("booking_id", window.selectedid);
+						form.append("service_time", datetime);
+
+						var settings = {
+							"url": `${constant().baseurl}/customer/booking/reschedule`,
+							"method": "POST",
+							"timeout": 0,
+							"headers": {
+								"Accept": "application/json",
+								"Authorization": `Bearer ${token}`
+							},
+							"processData": false,
+							"mimeType": "multipart/form-data",
+							"contentType": false,
+							"data": form
+						};
+
+						$.ajax(settings).done(function (response) {
+							console.log(response);
+							swal.fire({
+						title: "Success",
+						text: "Reschedule Successfull",
+						type: "success"
+					}).then(function () {
+						window.location.replace('appointment.html');
+					});
+						});
+
+
+
+					})
+
+
+
+				});
 
 			});
 

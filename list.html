@@ -35,7 +35,8 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
 		rel="stylesheet">
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
 	<!-- CSS -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/ion.rangeSlider.min.css" rel="stylesheet">
@@ -53,6 +54,16 @@
 	<script src="scripts/index.js"></script>
 	<script src="./constant.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script>
+		$(".heart.fa").click(function() {
+		  $(this).toggleClass("fa-heart fa-heart-o");
+		});
+		</script>
+	<style>
+		.heart {
+  font-size: 25px;
+    color:pink;
+		</style>
 </head>
 
 <body>
@@ -205,34 +216,38 @@
 	<div class="section-filter-top bg-primary">
 		<div class="container">
 			<div class="row gutters-7">
-				<div class="col-lg-4">
+				<div class="col-lg-3">
 					<div class="filter-box">
 						<i class="icon icon-search"></i>
 						<input type="text" class="form-control" placeholder="Roots colour" />
 					</div>
 				</div>
-
-				<div class="col-lg-4">
-					<div class="filter-box">
+				
+            	<div class="col-lg-3">
+					<div class="filter-box ">
 						<i class="icon icon-map"></i>
-						<input type="text" class="form-control" placeholder="Nicosia" />
-
+						<input id="location" type="text" class="form-control border" placeholder="Nicosia">
 						<div class="filter-inner-icon">
 							<i class="icon icon-location"></i>
 						</div>
-					</div>
-				</div>
+				 </div>
+		     </div>
 
-				<div class="col-lg-4">
+				<div class="col-lg-3">
 					<div class="filter-box">
 						<i class="icon icon-calendar"></i>
 						<input type="text" class="form-control datetimepicker" placeholder="12/9  10:00 - 11:00" />
 					</div>
 				</div>
-			</div>
-		</div>
-	</div>
-
+               <div class="col-lg-3">
+					<div class="filter-box">
+						
+						<button type="submit" class="form-control" ;style="background color:white; color= Dim black;font-size : 40px">Search</button>
+					</div>
+			   </div>
+		   </div>
+	   </div>
+    </div>
 	<!-- SECTION Filter REsult -->
 	<div class="section-filter-list">
 		<div class="container">
@@ -335,11 +350,12 @@
 								<div class="col-lg-6">
 									<div class="card-detail">
 										<a href="#" class="card-like">
-											<i class="icon icon-heart"></i>
+                                            
+											 <i click="function(this)" class="heart fa fa-heart-o"></i>
 										</a>
 
 										<h4 class="font-weight-bold text-dark" type="button" data-toggle="modal"
-											data-target="#modalProfile">Hai salon 1</h4>
+											data-target="#modalProfile">Hair salon 1</h4>
 
 										<div class="card-detail-review font-weight-medium text-dark">
 											<i class="icon icon-star text-warning mr-2"></i>5.0 Great
@@ -941,7 +957,7 @@
 					<div class="section-about section-about-page overflow-hidden">
 						<!-- ABOUT BANNER -->
 						<div class="container-fluid px-0 section-about-banner"
-							style="background-image: url('images/banner01.png');">
+							<style="background-image: url('images/banner01.png');">
 							<div class="row">
 								<div class="col-lg-5 ml-auto">
 									<!-- ABOUT SERVICE CARD -->

@@ -555,8 +555,8 @@ else{
 				`
 	  <div >
 						<div class="card-setting-image">
-							<img src=" ${response.data.user_profile_image}"  class="img-fluid img-full" alt="">
-						
+							<img src="https://www.snap.getboxxie.com/${response.data.user_profile_image}"  class="img-fluid img-full" alt="">
+						    ${(response.data.user_profile_image==null ? `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpmReRSYBQ1Be5MYdqoXQTZztaBTbjgeGSfA&usqp=CAU" class="img-fluid img-full" alt="">`:`<img src="https://www.snap.getboxxie.com/${response.data.user_profile_image}"  class="img-fluid img-full" alt="">`)}
 						</div>
 
 						<div class="card-setting-content">
