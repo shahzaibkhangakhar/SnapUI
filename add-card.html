@@ -74,13 +74,14 @@
 				<!-- MOBILE PROFILE -->
 				<div class="nav-item dropdown dropdown-backdrop d-lg-none d-flex">
 					<a class="nav-link nav-link-profile dropdown-toggle px-0" href="#" data-toggle="dropdown">
-						<img src="images/user.jpg" class="img-fluid" alt="Nicoletta Petrodou" />
-					</a>
 
+							<img id="mobProfilePic" src="images/user.jpg" class="img-fluid" alt="Nicoletta Petrodou" />
+
+					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-profile-menu">
 						<div class="dropdown-profile-menu-image">
 							<a class="nav-link nav-link-profile pl-0 pr-0 text-right" href="#">
-								<img src="images/user.jpg" class="img-fluid" alt="Nicoletta Petrodou" />
+								<img id="mobDropdownPic" src="images/user.jpg" class="img-fluid" alt="Nicoletta Petrodou" />
 							</a>
 
 							<h4 class="lead font-weight-bold text-dark mt-3">Nicoletta Petridou</h4>
@@ -136,13 +137,13 @@
 						</li>
 						<li class="nav-item dropdown dropdown-backdrop d-lg-flex d-none">
 							<a class="nav-link nav-link-profile dropdown-toggle" href="#" data-toggle="dropdown">
-								<img src="images/user.jpg" class="img-fluid" alt="Nicoletta Petrodou" />
+								<img id="deskProfilePic" src="images/user.jpg" class="img-fluid" alt="Nicoletta Petrodou" />
 							</a>
 
 							<div class="dropdown-menu dropdown-menu-right dropdown-profile-menu">
 								<div class="dropdown-profile-menu-image">
 									<a class="nav-link nav-link-profile pl-0 text-right" href="#">
-										<img src="images/user.jpg" class="img-fluid" alt="Nicoletta Petrodou" />
+										<img id="deskDropdownProfilePic" src="images/user.jpg" class="img-fluid" alt="Nicoletta Petrodou" />
 									</a>
 
 									<h4 class="lead font-weight-bold text-dark mt-3">Nicoletta Petridou</h4>
@@ -351,6 +352,20 @@
 
 
 <script>
+			if (!localStorage.getItem('picture')) {
+					console.log('here1: ', localStorage.getItem('picture'))
+					document.getElementById("mobProfilePic").src = 'images/user.jpg';
+					document.getElementById("mobDropdownPic").src = 'images/user.jpg';
+					document.getElementById("deskProfilePic").src = 'images/user.jpg';
+					document.getElementById("deskDropdownProfilePic").src = 'images/user.jpg';
+				}
+				else {
+					console.log('here2: ', localStorage.getItem('picture'))
+					document.getElementById("mobProfilePic").src = `https://www.snap.getboxxie.com/${localStorage.getItem('picture')}`;
+					document.getElementById("mobDropdownPic").src = `https://www.snap.getboxxie.com/${localStorage.getItem('picture')}`;
+					document.getElementById("deskProfilePic").src = `https://www.snap.getboxxie.com/${localStorage.getItem('picture')}`;
+					document.getElementById("deskDropdownProfilePic").src = `https://www.snap.getboxxie.com/${localStorage.getItem('picture')}`;
+				}
 	// Create an instance of the Stripe object
 	// Set your publishable API key
 

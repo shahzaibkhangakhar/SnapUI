@@ -45,6 +45,8 @@
 	<script src="./constant.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script type="module" src="logout.js"></script>
+
+	
 </head>
 
 <body>
@@ -77,13 +79,13 @@
 				<!-- MOBILE PROFILE -->
 				<div class="nav-item dropdown dropdown-backdrop d-lg-none d-flex">
 					<a  class="nav-link nav-link-profile dropdown-toggle px-0" href="#" data-toggle="dropdown">
-						<img src="images/user.jpg" id="profilepic" class="img-fluid" alt="Nicoletta Petrodou" />
+						<img src="images/user.jpg" id="mobProfilePic" class="img-fluid" alt="Nicoletta Petrodou" />
 					</a>
 
 					<div class="dropdown-menu dropdown-menu-right dropdown-profile-menu">
 						<div class="dropdown-profile-menu-image">
 							<a class="nav-link nav-link-profile pl-0 pr-0 text-right" href="#">
-								<img src="images/user.jpg" class="img-fluid" alt="Nicoletta Petrodou" />
+								<img src="images/user.jpg" id="mobDropdownPic" class="img-fluid" alt="Nicoletta Petrodou" />
 							</a>
 
 							<h4 class="lead font-weight-bold text-dark mt-3">Nicoletta Petridou</h4>
@@ -139,13 +141,13 @@
 						</li>
 						<li class="nav-item dropdown dropdown-backdrop d-lg-flex d-none">
 							<a class="nav-link nav-link-profile dropdown-toggle" href="#" data-toggle="dropdown">
-								<img src="images/user.jpg" class="img-fluid" alt="Nicoletta Petrodou" />
+								<img  src="images/user.jpg" id="deskProfilePic"  class="img-fluid" alt="Nicoletta Petrodou" />
 							</a>
 
 							<div class="dropdown-menu dropdown-menu-right dropdown-profile-menu">
 								<div class="dropdown-profile-menu-image">
 									<a class="nav-link nav-link-profile pl-0 text-right" href="#">
-										<img src="images/user.jpg" class="img-fluid" alt="Nicoletta Petrodou" />
+										<img  src="images/user.jpg" id="deskDropdownProfilePic" class="img-fluid" alt="Nicoletta Petrodou" />
 									</a>
 
 									<h4 class="lead font-weight-bold text-dark mt-3">Nicoletta Petridou</h4>
@@ -298,22 +300,17 @@
 										placeholder="Country" required />
 									</div>
 								</div>
-<div>
-	<input type="file" id="myFile" name="profile_picture">
-</div>
+								<div>
+								<input type="file" id="myFile" name="profile_picture">
+								</div>
 
 								<div class="col-lg-12">
 									<div>
 										<input type="submit" value="Submit" class="btn btn-primary btn-block">
 									</div>
 								</div>
-
-									
-								
-								
 							</div>
 						</form>
-					
 				</div>
 
 				<div id="tooglemethod" class="card-setting-list">
@@ -324,14 +321,14 @@
 
 					<div id="tooglemessage" class="d-flex align-items-center justify-content-between">
 						<span class="small text-dark font-weight-bold">Sms</span>
-						
-
 						<div class="custom-control custom-switch">
-							<input type="checkbox" class="custom-control-input" id="settingtoggle" onchange="function1()">
+							<input 
+								id="settingtoggle" 
+								type="checkbox" 
+								class="custom-control-input" 
+								onchange="function1()">
 							<label class="custom-control-label" for="settingtoggle"></label>
 						</div>
-
-						
 					</div>
 
 					<div id="newsletter" class="d-flex align-items-center justify-content-between">
@@ -426,6 +423,24 @@
 
 	<!-- SCRIPT -->
 <script>
+	//............................................................................. header dynamic profile pic.........................................................................
+
+		if (!localStorage.getItem('picture')) {
+			console.log('here1: ', localStorage.getItem('picture'))
+			document.getElementById("mobProfilePic").src = 'images/user.jpg';
+			document.getElementById("mobDropdownPic").src = 'images/user.jpg';
+			document.getElementById("deskProfilePic").src = 'images/user.jpg';
+			document.getElementById("deskDropdownProfilePic").src = 'images/user.jpg';
+		}
+		else {
+			console.log('here2: ', localStorage.getItem('picture'))
+			document.getElementById("mobProfilePic").src = `https://www.snap.getboxxie.com/${localStorage.getItem('picture')}`;
+			document.getElementById("mobDropdownPic").src = `https://www.snap.getboxxie.com/${localStorage.getItem('picture')}`;
+			document.getElementById("deskProfilePic").src = `https://www.snap.getboxxie.com/${localStorage.getItem('picture')}`;
+			document.getElementById("deskDropdownProfilePic").src = `https://www.snap.getboxxie.com/${localStorage.getItem('picture')}`;
+		}
+
+
 	//............................................................................. header and hide tabs.........................................................................
 var token = localStorage.getItem("token");
 if(token==null){
@@ -530,18 +545,23 @@ else{
 
 		$.ajax(settings).done(function (response) {
 			console.log(response);
-			if(response.data.sms==1){
-				$('#settingtoggle').is(':checked', true)
-			}
-			else{
-				$('#settingtoggle').is(':checked', false)
-			}
 
-			if(response.data.newsletter==1){
-				$('#newstoggle').is(':checked', true)
+			if(response.data.sms==1){
+				document.getElementById('settingtoggle').checked =true;
+				// $('#settingtoggle').is(':checked', true)
 			}
 			else{
-				$('#newstoggle').is(':checked', false)
+				document.getElementById('settingtoggle').checked =false;
+				// $('#settingtoggle').is(':checked', false)
+			}
+			
+			if(response.data.newsletter==1){
+				document.getElementById('newstoggle').checked =true;
+				// $('#newstoggle').is(':checked', true)
+			}
+			else{
+				document.getElementById('newstoggle').checked =false;
+				// $('#newstoggle').is(':checked', false)
 			}
 			$("#fname").val(response.data.name);
 			$("#pcode").val(response.data.post_code);
@@ -551,6 +571,7 @@ else{
 			$("#phone").val(response.data.phone);
 			// $("#email").val(response.data.email);
 			console.log(response.data.user_profile_image);
+			localStorage.setItem('picture',response.data.user_profile_image);
 			$("#userProfile").empty().append(
 				`
 	  <div >
@@ -680,7 +701,7 @@ var settings = {
 };
 
 $.ajax(settings).done(function (response) {
-  console.log(response);
+  console.log('NewsLetter API successMessage: ', response);
 });
 $.ajax(settings).fail(function (res, err) {
 	console.log("This is the response from news letter toggle api")
