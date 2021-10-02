@@ -572,14 +572,21 @@ else{
 			// $("#email").val(response.data.email);
 			console.log(response.data.user_profile_image);
 			localStorage.setItem('picture',response.data.user_profile_image);
+	var displayPic ='';	
+			if (response.data.user_profile_image !== null) {
+				console.log('here');
+				displayPic = `https://www.snap.getboxxie.com/${response.data.user_profile_image}`
+			}
+			else{
+				console.log('here1')
+				displayPic= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpmReRSYBQ1Be5MYdqoXQTZztaBTbjgeGSfA&usqp=CAU"
+			}
 			$("#userProfile").empty().append(
 				`
 	  <div >
 						<div class="card-setting-image">
-							<img src="https://www.snap.getboxxie.com/${response.data.user_profile_image}"  class="img-fluid img-full" alt="">
-						    ${(response.data.user_profile_image==null ? `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpmReRSYBQ1Be5MYdqoXQTZztaBTbjgeGSfA&usqp=CAU" class="img-fluid img-full" alt="">`:`<img src="https://www.snap.getboxxie.com/${response.data.user_profile_image}"  class="img-fluid img-full" alt="">`)}
+							<img src="${displayPic}"  class="img-fluid img-full" alt="">
 						</div>
-
 						<div class="card-setting-content">
 							<div class="section-title mb-2">
 								<h2 class="title-md text-dark font-weight-bold">${response.data.name}</h2>
