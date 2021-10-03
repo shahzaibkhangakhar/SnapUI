@@ -62,7 +62,7 @@
 	<style>
 		.heart {
   font-size: 25px;
-    color:pink;
+    color:pink; }
 		</style>
 </head>
 
@@ -219,14 +219,14 @@
 				<div class="col-lg-3">
 					<div class="filter-box">
 						<i class="icon icon-search"></i>
-						<input type="text" class="form-control" placeholder="Roots colour" />
+						<input id="venuefilter" type="text" class="form-control" placeholder="Search by venue" />
 					</div>
 				</div>
 				
             	<div class="col-lg-3">
 					<div class="filter-box ">
 						<i class="icon icon-map"></i>
-						<input id="location" type="text" class="form-control border" placeholder="Nicosia">
+						<input id="servicefilter" type="text" class="form-control border" placeholder="Search by Service">
 						<div class="filter-inner-icon">
 							<i class="icon icon-location"></i>
 						</div>
@@ -236,13 +236,13 @@
 				<div class="col-lg-3">
 					<div class="filter-box">
 						<i class="icon icon-calendar"></i>
-						<input type="text" class="form-control datetimepicker" placeholder="12/9  10:00 - 11:00" />
+						<input id="timefilter" type="text" class="form-control datetimepicker" placeholder="12/9  10:00 - 11:00" />
 					</div>
 				</div>
                <div class="col-lg-3">
 					<div class="filter-box">
 						
-						<button type="submit" class="form-control" ;style="background color:white; color= Dim black;font-size : 40px">Search</button>
+						<button id="searchfilter" type="submit" class="form-control" ;style="background color:white; color= Dim black;font-size : 40px">Search</button>
 					</div>
 			   </div>
 		   </div>
@@ -957,7 +957,7 @@
 					<div class="section-about section-about-page overflow-hidden">
 						<!-- ABOUT BANNER -->
 						<div class="container-fluid px-0 section-about-banner"
-							<style="background-image: url('images/banner01.png');">
+							style="background-image: url('images/banner01.png');">
 							<div class="row">
 								<div class="col-lg-5 ml-auto">
 									<!-- ABOUT SERVICE CARD -->
@@ -2458,6 +2458,71 @@
 
 		}
 	</script>
+
+	<script>
+		//.........................................................................search through filter...............................................
+		
+	//.................................................Top search...........................................................
+	//search through venue
+$('#searchfilter').click(function (event) {
+  event.preventDefault()
+  var form = new FormData()
+  form.append('venue_name', $('#venuefilter').val())
+  form.append('service_title', $('#servicefilter').val())
+  form.append('site_id', '1')
+
+  var settings = {}
+
+  $.ajax({
+    url: `${baseurl}/search-snap/venue`,
+    method: 'POST',
+    timeout: 0,
+    headers: {
+      Accept: 'application/json'
+    },
+    processData: false,
+    mimeType: 'multipart/form-data',
+    contentType: false,
+    data: form,
+    success: function (response) {
+      localStorage.removeItem('searcheddata')
+      alert('Search Complete ')
+      localStorage.setItem('searcheddata', response)
+      console.log('data from search by venue from index page', response)
+      var datares= JSON.parse(response).data[0]
+      if (datares==null) {
+        Swal.fire(
+          'Failed!!',
+          'No Data Found',
+          'error'
+        );
+   
+      }
+      else {
+        window.location.replace('list.html');
+      
+      }
+    },
+    error: function (e) {
+      console.log('Search through services Error', e)
+
+      if (e.status == 401) {
+        Swal.fire('Failed!!', 'Not found any thing ', 'error')
+      } else if (e.status == 0) {
+        Swal.fire('Failed!!', 'Please Check your internet connection ', 'error')
+      } else {
+        Swal.fire(
+          'search through venue Failed!!',
+          'Please Check Server or Contact Admin ',
+          'error'
+        )
+      }
+      console.log('ERROR: ', e)
+    }
+  })
+})
+</script>
+
 
 </body>
 
