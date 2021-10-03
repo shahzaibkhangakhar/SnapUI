@@ -1,789 +1,745 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1, shrink-to-fit=no maximum-scale=1, user-scalable=no" />
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<meta name="generator" content="">
-	<title>Snap</title>
-	<link rel="canonical" href="">
-	<!-- Favicons -->
-	<link rel="apple-touch-icon" sizes="57x57" href="images/fav/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="images/fav/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="images/fav/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="images/fav/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="images/fav/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="images/fav/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="images/fav/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="images/fav/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="images/fav/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192" href="images/fav/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="images/fav/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="images/fav/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="images/fav/favicon-16x16.png">
-	<link rel="manifest" href="images/fav/manifest.json">
-	<meta name="msapplication-TileColor" content="#F43AB0">
-	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-	<meta name="theme-color" content="#F43AB0">
-	<!-- FONTS -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
-		rel="stylesheet">
-	<!-- CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="stylesheet.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-	<link href="css/media.css" rel="stylesheet">
-	<link href="css/icon.css" rel="stylesheet">
-	<script src="js/jquery-3.6.0.min.js"></script>
-	<script src="js/bootstrap.bundle.min.js"></script>
-	<script src="js/main.js"></script>
-	<script src="./constant.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	<script type="module" src="logout.js"></script>
-
-	
-</head>
-
-<body>
-	<!-- PRELOAD -->
-	<div id="preloader">
-		<div class="loader">
-			<span></span>
-		</div>
-	</div>
-
-	<!-- HEADER -->
-	<header class="header header-inner">
-		<div class="container">
-			<nav class="navbar navbar-expand-lg p-0">
-				<!-- LOGO -->
-				<a class="navbar-brand p-0" href="index.html">
-					<img src="images/logo.svg" class="img-fluid d-block" alt="Snap" />
-					<img src="images/logo-square.png" class="img-fluid logo-sticky d-block" alt="Snap" />
-				</a>
-
-				<!-- MOBILE TOGGLE -->
-				<button class="navbar-toggler collapsed d-lg-none d-flex ml-auto mr-3" type="button"
-					data-toggle="collapse" data-target=".mobileMenu" aria-controls="mobileMenu" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-
-				<!-- MOBILE PROFILE -->
-				<div class="nav-item dropdown dropdown-backdrop d-lg-none d-flex">
-					<a  class="nav-link nav-link-profile dropdown-toggle px-0" href="#" data-toggle="dropdown">
-						<img src="images/user.jpg" id="mobProfilePic" class="img-fluid" alt="Nicoletta Petrodou" />
-					</a>
-
-					<div class="dropdown-menu dropdown-menu-right dropdown-profile-menu">
-						<div class="dropdown-profile-menu-image">
-							<a class="nav-link nav-link-profile pl-0 pr-0 text-right" href="#">
-								<img src="images/user.jpg" id="mobDropdownPic" class="img-fluid" alt="Nicoletta Petrodou" />
-							</a>
-
-							<h4 class="lead font-weight-bold text-dark mt-3">Nicoletta Petridou</h4>
-
-							<a href="#" class="small text-primary font-weight-medium">Edit Profile</a>
-						</div>
-
-
-						<ul class="list-unstyled pt-1">
-							<li>
-								<div class="dropdown-divider"></div>
-							</li>
-							<li>
-								<a href="appointment.html">
-									<i class="icon icon-appointment"></i> My appointments
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="icon icon-voucher"></i> My vouchers
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<i class="icon icon-heart"></i> My favorites
-								</a>
-							</li>
-							<li>
-								<a href="setting.html">
-									<i class="icon icon-setting"></i> Settings
-								</a>
-							</li>
-							<li>
-								<div class="dropdown-divider"></div>
-							</li>
-							<li>
-								<a class="logout" href="#">
-									<i class="icon icon-logout"></i> Log out
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="collapse navbar-collapse mobileMenu">
-					<!-- UPPER MENU -->
-					<ul class="navbar-nav ml-auto align-items-lg-center">
-						<li id="forpartner" class="nav-item">
-							<a class="nav-link" href="#">FOR PARTNERS</a>
-						</li>
-						<li id="forsignup" class="nav-item">
-							<a class="nav-link" href="#">SIGN UP</a>
-						</li>
-						<li class="nav-item dropdown dropdown-backdrop d-lg-flex d-none">
-							<a class="nav-link nav-link-profile dropdown-toggle" href="#" data-toggle="dropdown">
-								<img  src="images/user.jpg" id="deskProfilePic"  class="img-fluid" alt="Nicoletta Petrodou" />
-							</a>
-
-							<div class="dropdown-menu dropdown-menu-right dropdown-profile-menu">
-								<div class="dropdown-profile-menu-image">
-									<a class="nav-link nav-link-profile pl-0 text-right" href="#">
-										<img  src="images/user.jpg" id="deskDropdownProfilePic" class="img-fluid" alt="Nicoletta Petrodou" />
-									</a>
-
-									<h4 class="lead font-weight-bold text-dark mt-3">Nicoletta Petridou</h4>
-
-									<a href="#" class="small text-primary font-weight-medium">Edit Profile</a>
-								</div>
-
-								<ul class="list-unstyled pt-1">
-									<li>
-										<div class="dropdown-divider"></div>
-									</li>
-									<li>
-										<a href="appointment.html">
-											<i class="icon icon-appointment"></i> My appointments
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<i class="icon icon-voucher"></i> My vouchers
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<i class="icon icon-heart"></i> My favorites
-										</a>
-									</li>
-									<li>
-										<a href="setting.html">
-											<i class="icon icon-setting"></i> Settings
-										</a>
-									</li>
-									<li>
-										<div class="dropdown-divider"></div>
-									</li>
-									<li>
-										<a class="logout" href="#">
-											<i class="icon icon-logout"></i> Log out
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</nav>
-		</div>
-	</header>
-
-	<!-- SECTION SETTING -->
-	<div class="section-setting bg-light">
-		<div class="container">
-
-			<div class="row gutters-7">
-				<div class="col-lg-4">
-					<!-- SETTING LEFT SIDE -->
-					<div id="userProfile" class="card-setting">
-						<div class="card-setting-image">
-							<img src="images/user.jpg" class="img-fluid img-full" alt="">
-						</div>
-
-						<div class="card-setting-content">
-							<div class="section-title mb-2">
-								<h2 class="title-md text-dark font-weight-bold">Nicoletta Petriodou</h2>
-							</div>
-
-							<p class="text-center">
-								<a href="#" class="text-primary font-weight-medium">Edit Profile</a>
-							</p>
-						</div>
-
-						<div class="card-setting-info mt-4 text-left px-sm-3">
-							<div class="text-dark mt-3">
-								<p class="font-weight-bold">Mobile phone</p>
-								<p class="font-weight-normal">+357 99 XXXXXX</p>
-							</div>
-
-							<div class="text-dark mt-3">
-								<p class="font-weight-bold">Email</p>
-								<p class="font-weight-normal">nicoletta@gmail.com</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-7">
-
-					<!-- SETTING RIGHT SIDE -->
-					<div id='paymentmethod' class="card-setting-list">
-						<h4 class="text-dark font-weight-bold">Payment methods</h4>
-
-						<p class="small text-dark font-weight-medium mt-2 mb-4">Securely save your card details for
-							hassle-free payments</p>
-
-						<a href="add-card.html" class="small text-primary text-primary font-weight-medium">Add new
-							card</a>
-						</div>
-					<div id='formRow' class="card-setting-list" style="display:none">
-						<a href="setting.html">
-							<i class="icon icon-left-arrow"></i>
-						</a>
-<center><h6 style="color:#f43ab0; font-size: 40px; margin: 5%;">UPDATE PROFILE</h6></b></center>
-
-						<form method="POST" autocomplete="off">
-							<div class="row gutters-7">
-								<div class="col-lg-6">
-									<div class="mb-3">
-										<input id="email" type="text" class="form-control border" name="email"
-											placeholder="Email" required />
-									</div>
-								</div>
-
-								<div class="col-lg-6">
-									<div class="mb-3">
-										<input id="fname" type="text" class="form-control border" name="first_name"
-										placeholder="first name" required />
-									</div>
-								</div>
-								<div class="col-lg-6">
-									<div class="mb-3">
-										<input id="lname" type="text" class="form-control border" name="last_name"
-										placeholder="first name" required />
-									</div>
-								</div>
-
-
-								<div class="col-lg-6">
-									<div class="mb-3">
-										<input id="pcode" type="text" class="form-control border" name="post_code"
-										placeholder="Postcode" required />
-									</div>
-								</div>
-
-								<div class="col-lg-6">
-									<div class="mb-3">
-										<input id="city" type="text" class="form-control border" name="city"
-										placeholder="City" required />
-									</div>
-								</div>
-
-								<div class="col-lg-6">
-									<div class="mb-3">
-										<input id="phone" type="text" class="form-control border" name="phone"
-										placeholder="Phone Number" required />
-									</div>
-								</div>
-
-								<div class="col-lg-6">
-									<div class="mb-3">
-										<input id="country" type="text" class="form-control border" name="country"
-										placeholder="Country" required />
-									</div>
-								</div>
-								<div>
-								<input type="file" id="myFile" name="profile_picture">
-								</div>
-
-								<div class="col-lg-12">
-									<div>
-										<input type="submit" value="Submit" class="btn btn-primary btn-block">
-									</div>
-								</div>
-							</div>
-						</form>
-				</div>
-
-				<div id="tooglemethod" class="card-setting-list">
-					<h4 class="text-dark font-weight-bold">Notifications</h4>
-
-					<p class="small text-dark font-weight-medium mt-2 mb-4">Stay up-to-date with alerts and
-						appointment reminders</p>
-
-					<div id="tooglemessage" class="d-flex align-items-center justify-content-between">
-						<span class="small text-dark font-weight-bold">Sms</span>
-						<div class="custom-control custom-switch">
-							<input 
-								id="settingtoggle" 
-								type="checkbox" 
-								class="custom-control-input" 
-								onchange="function1()">
-							<label class="custom-control-label" for="settingtoggle"></label>
-						</div>
-					</div>
-
-					<div id="newsletter" class="d-flex align-items-center justify-content-between">
-						<span class="small text-dark font-weight-bold">Newsletter</span>
-						
-
-						<div class="custom-control custom-switch">
-							<input type="checkbox" class="custom-control-input" id="newstoggle" onchange="function2()">
-							<label class="custom-control-label" for="newstoggle"></label>
-						</div>
-
-						
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	</div>
-
-	<!-- FOOTER -->
-	<footer class="footer bg-primary">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4">
-					<div class="footer-about pr-xl-5 pr-lg-4">
-						<div class="footer-logo mb-3">
-							<img src="images/logo.svg" class="img-fluid d-block" alt="Snap">
-						</div>
-
-						<p class="text-white font-weight-medium">Lorem ipsum dolor sit amet, consetetur sadipscing
-							elitr, sed diam onumy eirmod tempor invidunt ut.</p>
-					</div>
-				</div>
-
-				<div class="col-lg-8">
-					<div id='footer-list' class="row">
-						<div class="col-lg-4">
-							<div class="footer-link mt-lg-0 mt-4">
-								<h4 class="lead font-weight-bold text-white mb-3">Company</h4>
-
-								<ul class="list-unstyled">
-									<li><a href="#">About Us</a></li>
-									<li><a href="#">Blogs</a></li>
-									<li><a href="#">Team</a></li>
-									<li><a href="#">Shop</a></li>
-									<li><a href="#">Contact</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="col-lg-4">
-							<div class="footer-link mt-lg-0 mt-4">
-								<h4 class="lead font-weight-bold text-white mb-3">Services</h4>
-
-								<ul class="list-unstyled">
-									<li><a href="#">Spa</a></li>
-									<li><a href="#">Hair Cut</a></li>
-									<li><a href="#">Massage</a></li>
-									<li><a href="#">Makeup</a></li>
-									<li><a href="#">Bridal</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="col-lg-4">
-							<div class="footer-link mt-lg-0 mt-4">
-								<h4 class="lead font-weight-bold text-white mb-3">Quick Links</h4>
-
-								<ul class="list-unstyled">
-									<li><a href="#">FAQ</a></li>
-									<li><a href="#">Appointment</a></li>
-									<li><a href="#">Terms & Conditions</a></li>
-									<li><a href="#">Privacy Policy</a></li>
-									<li><a href="#">My Account</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="pt-lg-5 pt-4 mt-lg-5 mt-4 border-top">
-						<p class="small text-center font-weight-medium text-white">&copy; 2021 Snap. All Right Reserved.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-
-	<!-- SCRIPT -->
-<script>
-	//............................................................................. header dynamic profile pic.........................................................................
-
-		if (!localStorage.getItem('picture')) {
-			console.log('here1: ', localStorage.getItem('picture'))
-			document.getElementById("mobProfilePic").src = 'images/user.jpg';
-			document.getElementById("mobDropdownPic").src = 'images/user.jpg';
-			document.getElementById("deskProfilePic").src = 'images/user.jpg';
-			document.getElementById("deskDropdownProfilePic").src = 'images/user.jpg';
-		}
-		else {
-			console.log('here2: ', localStorage.getItem('picture'))
-			document.getElementById("mobProfilePic").src = `https://www.snap.getboxxie.com/${localStorage.getItem('picture')}`;
-			document.getElementById("mobDropdownPic").src = `https://www.snap.getboxxie.com/${localStorage.getItem('picture')}`;
-			document.getElementById("deskProfilePic").src = `https://www.snap.getboxxie.com/${localStorage.getItem('picture')}`;
-			document.getElementById("deskDropdownProfilePic").src = `https://www.snap.getboxxie.com/${localStorage.getItem('picture')}`;
-		}
-
-
-	//............................................................................. header and hide tabs.........................................................................
-var token = localStorage.getItem("token");
-if(token==null){
-var form = new FormData()
-form.append('site_id', '1')
-form.append('slug', 'header')
-
-
-var settings = {
-  url: `${constant().baseurl}/navigation/get`,
-  method: 'POST',
-  timeout: 0,
-  headers: {
-    Accept: 'application/json'
-  },
-  processData: false,
-  mimeType: 'multipart/form-data',
-  contentType: false,
-  data: form
-}
-
-$.ajax(settings).done(function (response) {
-  // console.log(response);
-  $('#navlist')
-    .empty()
-    .append(
-      JSON.parse(response).data.map(RD => {
-        return `<li class="nav-item">
-                    <a class="nav-link" href="${RD.url}">${RD.title}</a>
-                </li>`
-      })
-    )
-})
-$.ajax(settings).fail(function (res, err) {
-  console.log('Response', res.status)
-  if (res.status == 0) {
-    console.log('Header internet issue')
-    Swal.fire('Failed!!', 'Please Check your internet connection ', 'error')
-  } else {
-    Swal.fire('Failed!!', 'Please Check Server or Contact Admin ', 'error')
-  }
-})
-}
-else{
-//hide partner and signup tabs
-	$("#forpartner").hide();
-	$("#forsignup").hide();
-}
-</script>
-
-
-	<script>
-//......................................................................... profile show..........................................................
-		var token = localStorage.getItem("token");
-		if(token==null){
-			Swal.fire(
-					'Failed!!',
-					'Please login in continue ',
-					'error'
-				);
-				window.location.replace('login.html');
-		}
-		else{
-		//.....................................................update profile form..................................
-		$("#formRow").submit(e => {
-			e.preventDefault();
-			$.ajax({
-				url: `${constant().baseurl}/customer/update-profile`,
-				headers: {
-					"Accept": "application/json",
-
-					"Authorization": `Bearer ${token}`
-				},
-				data: new FormData($("#formRow > form")[0]),
-				type: "POST",
-				"processData": false,
-				"mimeType": "multipart/form-data",
-				"contentType": false,
-				success: result => {
-					swal.fire({
-						title: "Success ",
-						text: "Your Account has been updated Successfully",
-						type: "success"
-					}).then(function () {
-						window.location = "setting.html";
-					});
-				}
-			})
-		})
-		console.log(token);
-		//..........................................................profile view................................
-		var settings = {
-			"url": `${constant().baseurl}/customer/profile`,
-			"method": "GET",
-			"timeout": 0,
-			"headers": {
-				"Accept": "application/json",
-
-				"Authorization": `Bearer ${token}`
-			},
-		};
-
-		$.ajax(settings).done(function (response) {
-			console.log(response);
-
-			if(response.data.sms==1){
-				document.getElementById('settingtoggle').checked =true;
-				// $('#settingtoggle').is(':checked', true)
-			}
-			else{
-				document.getElementById('settingtoggle').checked =false;
-				// $('#settingtoggle').is(':checked', false)
-			}
-			
-			if(response.data.newsletter==1){
-				document.getElementById('newstoggle').checked =true;
-				// $('#newstoggle').is(':checked', true)
-			}
-			else{
-				document.getElementById('newstoggle').checked =false;
-				// $('#newstoggle').is(':checked', false)
-			}
-			$("#fname").val(response.data.name);
-			$("#pcode").val(response.data.post_code);
-			$("#email").val(response.data.email);
-			$("#city").val(response.data.city);
-			$("#country").val(response.data.country);
-			$("#phone").val(response.data.phone);
-			// $("#email").val(response.data.email);
-			console.log(response.data.user_profile_image);
-			localStorage.setItem('picture',response.data.user_profile_image);
-			$("#userProfile").empty().append(
-				`
-	  <div >
-						<div class="card-setting-image">
-							<img src="https://www.snap.getboxxie.com/${response.data.user_profile_image}"  class="img-fluid img-full" alt="">
-						    ${(response.data.user_profile_image==null ? `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpmReRSYBQ1Be5MYdqoXQTZztaBTbjgeGSfA&usqp=CAU" class="img-fluid img-full" alt="">`:`<img src="https://www.snap.getboxxie.com/${response.data.user_profile_image}"  class="img-fluid img-full" alt="">`)}
-						</div>
-
-						<div class="card-setting-content">
-							<div class="section-title mb-2">
-								<h2 class="title-md text-dark font-weight-bold">${response.data.name}</h2>
-							</div>
-
-							<p class="text-center">
-								<a id="editbutton" href="#" class="text-primary font-weight-medium">Edit Profile</a>
-									
-	<script>${'$'}('#editbutton').click(function (event)
-		{console.log('Hello apiii');
-		$("#formRow").show();
-		$("#paymentmethod").hide();
-		$("#tooglemethod").hide();
-	
-	
-	});
-	<${'/'}script>
-	</p>
-	</div>
-
-	<div class="card-setting-info mt-4 text-left px-sm-3">
-		<div class="text-dark mt-3">
-			<p class="font-weight-bold">Mobile phone</p>
-			<p class="font-weight-normal">${response.data.phone}</p>
-		</div>
-
-		<div class="text-dark mt-3">
-			<p class="font-weight-bold">Email</p>
-			<p class="font-weight-normal">${response.data.email}</p>
-		</div>
-	</div>
-	</div>`
-
-	
-			)
-		});
-		$.ajax(settings).fail(function (res, err) {
-			console.log("Response", res.status);
-			if (res.status == 0) {
-
-				console.log("internet issue");
-				Swal.fire(
-					'Failed!!',
-					'Please Check your internet connection ',
-					'error'
-				);
-
-			}
-			else {
-				Swal.fire(
-					'Failed!!',
-					'Please Check Server or Contact Admin ',
-					'error'
-				);
-			}
-		});
-
-	}
-
-	</script>
-
-
-	<script>
-//............................................................................ toogle message ..................................................................
-function function1() {
-
-	var settings = {
-			"url": `${constant().baseurl}/customer/toggle-message-status/sms`,
-			"method": "GET",
-			"timeout": 0,
-			"headers": {
-				"Accept": "application/json",
-				"Authorization": `Bearer ${token}`
-			},
-		};
-		$.ajax(settings).done(function (response) {
-			console.log("This is the response from sms toggle api")
-			console.log(response);
-
-		});
-		$.ajax(settings).fail(function (res, err) {
-			console.log("Response", res.status);
-			if (res.status == 0) {
-
-				console.log("internet issue");
-				Swal.fire(
-					'Failed!!',
-					'Please Check your internet connection ',
-					'error'
-				);
-
-			}
-			else {
-				Swal.fire(
-					'Failed!!',
-					'Please Check Server or Contact Admin ',
-					'error'
-				);
-			}
-		});
-
-	
-}
-
-function function2() {
-	var form = new FormData();
-var settings = {
-  "url": `${constant().baseurl}/customer/toggle-message-status/newsletter`,
-  "method": "GET",
-  "timeout": 0,
-  "headers": {
-    "Accept": "application/json",
-	"Authorization": `Bearer ${token}`
-  },
-  "processData": false,
-  "mimeType": "multipart/form-data",
-  "contentType": false,
-  "data": form
-};
-
-$.ajax(settings).done(function (response) {
-  console.log('NewsLetter API successMessage: ', response);
-});
-$.ajax(settings).fail(function (res, err) {
-	console.log("This is the response from news letter toggle api")
-			console.log("Response", res.status);
-			if (res.status == 0) {
-
-				console.log("internet issue");
-				Swal.fire(
-					'Failed!!',
-					'Please Check your internet connection ',
-					'error'
-				);
-
-			}
-			else {
-				Swal.fire(
-					'Failed!!',
-					'Please Check Server or Contact Admin ',
-					'error'
-				);
-			}
-		});
-}
-
-	</script>
-
-<script>
-	//................................................................................footer...............................................................................
-	var form = new FormData()
-	form.append('site_id', '1')
-	form.append('slug', 'footer')
-	
-	var settings1 = {
-	  url: `${constant().baseurl}/navigation/get`,
-	  method: 'POST',
-	  timeout: 0,
-	  headers: {
-		Accept: 'application/json'
-	  },
-	  processData: false,
-	  mimeType: 'multipart/form-data',
-	  contentType: false,
-	  data: form
-	}
-	
-	$.ajax(settings1).done(function (response) {
-	  // console.log(response);
-	  $('#footer-list')
-		.empty()
-		.append(
-		  JSON.parse(response).data.map(RD => {
-			return `<div class="col-lg-4">
-						<div class="footer-link mt-lg-0 mt-4">
-							<h4 class="lead font-weight-bold text-white mb-3">${
-							  RD.title
-							}</h4>
-	
-							<ul class="list-unstyled">
-								${RD.subtabs.map(
-								  ST =>
-									`<li><a href="${ST.url == null ? "#" : ST.url}">${ST.title}</a></li>`
-								)}
-								
-							</ul>
-						</div>
-					</div>`
-		  })
-		)
-	})
-	$.ajax(settings1).fail(function (res, err) {
-	  console.log('Response', res.status)
-	  if (res.status == 0) {
-		console.log('Footer internet issue')
-		Swal.fire('Failed!!', 'Please Check your internet connection ', 'error')
-	  } else {
-		Swal.fire('Failed!!', 'Please Check Server or Contact Admin ', 'error')
-	  }
-	})
-	//.....................................................................footer end here..............................................................................
-
-	</script>
-
-</body>
-
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport"
+         content="width=device-width, initial-scale=1, shrink-to-fit=no maximum-scale=1, user-scalable=no" />
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <meta name="generator" content="">
+      <title>Snap</title>
+      <link rel="canonical" href="">
+      <!-- Favicons -->
+      <link rel="apple-touch-icon" sizes="57x57" href="images/fav/apple-icon-57x57.png">
+      <link rel="apple-touch-icon" sizes="60x60" href="images/fav/apple-icon-60x60.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/fav/apple-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="76x76" href="images/fav/apple-icon-76x76.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/fav/apple-icon-114x114.png">
+      <link rel="apple-touch-icon" sizes="120x120" href="images/fav/apple-icon-120x120.png">
+      <link rel="apple-touch-icon" sizes="144x144" href="images/fav/apple-icon-144x144.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="images/fav/apple-icon-152x152.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="images/fav/apple-icon-180x180.png">
+      <link rel="icon" type="image/png" sizes="192x192" href="images/fav/android-icon-192x192.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="images/fav/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="96x96" href="images/fav/favicon-96x96.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="images/fav/favicon-16x16.png">
+      <link rel="manifest" href="images/fav/manifest.json">
+      <meta name="msapplication-TileColor" content="#F43AB0">
+      <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+      <meta name="theme-color" content="#F43AB0">
+      <!-- FONTS -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+         rel="stylesheet">
+      <!-- CSS -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="stylesheet.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+      <link href="css/media.css" rel="stylesheet">
+      <link href="css/icon.css" rel="stylesheet">
+      <script src="js/jquery-3.6.0.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/main.js"></script>
+      <script src="./constant.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script type="module" src="logout.js"></script>
+   </head>
+   <body>
+      <!-- PRELOAD -->
+      <div id="preloader">
+         <div class="loader">
+            <span></span>
+         </div>
+      </div>
+      <!-- HEADER -->
+      <header class="header header-inner">
+         <div class="container">
+            <nav class="navbar navbar-expand-lg p-0">
+               <!-- LOGO -->
+               <a class="navbar-brand p-0" href="index.html">
+               <img src="images/logo.svg" class="img-fluid d-block" alt="Snap" />
+               <img src="images/logo-square.png" class="img-fluid logo-sticky d-block" alt="Snap" />
+               </a>
+               <!-- MOBILE TOGGLE -->
+               <button class="navbar-toggler collapsed d-lg-none d-flex ml-auto mr-3" type="button"
+                  data-toggle="collapse" data-target=".mobileMenu" aria-controls="mobileMenu" aria-expanded="false"
+                  aria-label="Toggle navigation">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+               <!-- MOBILE PROFILE -->
+               <div class="nav-item dropdown dropdown-backdrop d-lg-none d-flex">
+                  <a  class="nav-link nav-link-profile dropdown-toggle px-0" href="#" data-toggle="dropdown">
+                  <img src="images/user.jpg" id="mobProfilePic" class="img-fluid" alt="Nicoletta Petrodou" />
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right dropdown-profile-menu">
+                     <div class="dropdown-profile-menu-image">
+                        <a class="nav-link nav-link-profile pl-0 pr-0 text-right" href="#">
+                        <img src="images/user.jpg" id="mobDropdownPic" class="img-fluid" alt="Nicoletta Petrodou" />
+                        </a>
+                        <h4 class="lead font-weight-bold text-dark mt-3">Nicoletta Petridou</h4>
+                        <a href="#" class="small text-primary font-weight-medium">Edit Profile</a>
+                     </div>
+                     <ul class="list-unstyled pt-1">
+                        <li>
+                           <div class="dropdown-divider"></div>
+                        </li>
+                        <li>
+                           <a href="appointment.html">
+                           <i class="icon icon-appointment"></i> My appointments
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                           <i class="icon icon-voucher"></i> My vouchers
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                           <i class="icon icon-heart"></i> My favorites
+                           </a>
+                        </li>
+                        <li>
+                           <a href="setting.html">
+                           <i class="icon icon-setting"></i> Settings
+                           </a>
+                        </li>
+                        <li>
+                           <div class="dropdown-divider"></div>
+                        </li>
+                        <li>
+                           <a class="logout" href="#">
+                           <i class="icon icon-logout"></i> Log out
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="collapse navbar-collapse mobileMenu">
+                  <!-- UPPER MENU -->
+                  <ul class="navbar-nav ml-auto align-items-lg-center">
+                     <li id="forpartner" class="nav-item">
+                        <a class="nav-link" href="#">FOR PARTNERS</a>
+                     </li>
+                     <li id="forsignup" class="nav-item">
+                        <a class="nav-link" href="#">SIGN UP</a>
+                     </li>
+                     <li class="nav-item dropdown dropdown-backdrop d-lg-flex d-none">
+                        <a class="nav-link nav-link-profile dropdown-toggle" href="#" data-toggle="dropdown">
+                        <img  src="images/user.jpg" id="deskProfilePic"  class="img-fluid" alt="Nicoletta Petrodou" />
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-profile-menu">
+                           <div class="dropdown-profile-menu-image">
+                              <a class="nav-link nav-link-profile pl-0 text-right" href="#">
+                              <img  src="images/user.jpg" id="deskDropdownProfilePic" class="img-fluid" alt="Nicoletta Petrodou" />
+                              </a>
+                              <h4 class="lead font-weight-bold text-dark mt-3">Nicoletta Petridou</h4>
+                              <a href="#" class="small text-primary font-weight-medium">Edit Profile</a>
+                           </div>
+                           <ul class="list-unstyled pt-1">
+                              <li>
+                                 <div class="dropdown-divider"></div>
+                              </li>
+                              <li>
+                                 <a href="appointment.html">
+                                 <i class="icon icon-appointment"></i> My appointments
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="#">
+                                 <i class="icon icon-voucher"></i> My vouchers
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="#">
+                                 <i class="icon icon-heart"></i> My favorites
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="setting.html">
+                                 <i class="icon icon-setting"></i> Settings
+                                 </a>
+                              </li>
+                              <li>
+                                 <div class="dropdown-divider"></div>
+                              </li>
+                              <li>
+                                 <a class="logout" href="#">
+                                 <i class="icon icon-logout"></i> Log out
+                                 </a>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+         </div>
+      </header>
+      <!-- SECTION SETTING -->
+      <div class="section-setting bg-light">
+         <div class="container">
+            <div class="row gutters-7">
+               <div class="col-lg-4">
+                  <!-- SETTING LEFT SIDE -->
+                  <div id="userProfile" class="card-setting">
+                     <div class="card-setting-image">
+                        <img src="images/user.jpg" class="img-fluid img-full" alt="">
+                     </div>
+                     <div class="card-setting-content">
+                        <div class="section-title mb-2">
+                           <h2 class="title-md text-dark font-weight-bold">Nicoletta Petriodou</h2>
+                        </div>
+                        <p class="text-center">
+                           <a href="#" class="text-primary font-weight-medium">Edit Profile</a>
+                        </p>
+                     </div>
+                     <div class="card-setting-info mt-4 text-left px-sm-3">
+                        <div class="text-dark mt-3">
+                           <p class="font-weight-bold">Mobile phone</p>
+                           <p class="font-weight-normal">+357 99 XXXXXX</p>
+                        </div>
+                        <div class="text-dark mt-3">
+                           <p class="font-weight-bold">Email</p>
+                           <p class="font-weight-normal">nicoletta@gmail.com</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-lg-7">
+                  <!-- SETTING RIGHT SIDE -->
+                  <div id='paymentmethod' class="card-setting-list">
+                     <h4 class="text-dark font-weight-bold">Payment methods</h4>
+                     <p class="small text-dark font-weight-medium mt-2 mb-4">Securely save your card details for
+                        hassle-free payments
+                     </p>
+                     <a href="add-card.html" class="small text-primary text-primary font-weight-medium">Add new
+                     card</a>
+                  </div>
+                  <div id='formRow' class="card-setting-list" style="display:none">
+                     <a href="setting.html">
+                     <i class="icon icon-left-arrow"></i>
+                     </a>
+                     <center>
+                        <h6 style="color:#f43ab0; font-size: 40px; margin: 5%;">UPDATE PROFILE</h6>
+                        </b>
+                     </center>
+                     <form method="POST" autocomplete="off">
+                        <div class="row gutters-7">
+                           <div class="col-lg-6">
+                              <div class="mb-3">
+                                 <input id="email" type="text" class="form-control border" name="email"
+                                    placeholder="Email" required />
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="mb-3">
+                                 <input id="fname" type="text" class="form-control border" name="first_name"
+                                    placeholder="first name" required />
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="mb-3">
+                                 <input id="lname" type="text" class="form-control border" name="last_name"
+                                    placeholder="first name" required />
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="mb-3">
+                                 <input id="pcode" type="text" class="form-control border" name="post_code"
+                                    placeholder="Postcode" required />
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="mb-3">
+                                 <input id="city" type="text" class="form-control border" name="city"
+                                    placeholder="City" required />
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="mb-3">
+                                 <input id="phone" type="text" class="form-control border" name="phone"
+                                    placeholder="Phone Number" required />
+                              </div>
+                           </div>
+                           <div class="col-lg-6">
+                              <div class="mb-3">
+                                 <input id="country" type="text" class="form-control border" name="country"
+                                    placeholder="Country" required />
+                              </div>
+                           </div>
+                           <div>
+                              <input type="file" id="myFile" name="profile_picture">
+                           </div>
+                           <div class="col-lg-12">
+                              <div>
+                                 <input type="submit" value="Submit" class="btn btn-primary btn-block">
+                              </div>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+                  <div id="tooglemethod" class="card-setting-list">
+                     <h4 class="text-dark font-weight-bold">Notifications</h4>
+                     <p class="small text-dark font-weight-medium mt-2 mb-4">Stay up-to-date with alerts and
+                        appointment reminders
+                     </p>
+                     <div id="tooglemessage" class="d-flex align-items-center justify-content-between">
+                        <span class="small text-dark font-weight-bold">Sms</span>
+                        <div class="custom-control custom-switch">
+                           <input 
+                              id="settingtoggle" 
+                              type="checkbox" 
+                              class="custom-control-input" 
+                              onchange="function1()">
+                           <label class="custom-control-label" for="settingtoggle"></label>
+                        </div>
+                     </div>
+                     <div id="newsletter" class="d-flex align-items-center justify-content-between">
+                        <span class="small text-dark font-weight-bold">Newsletter</span>
+                        <div class="custom-control custom-switch">
+                           <input type="checkbox" class="custom-control-input" id="newstoggle" onchange="function2()">
+                           <label class="custom-control-label" for="newstoggle"></label>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- FOOTER -->
+      <footer class="footer bg-primary">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-4">
+                  <div class="footer-about pr-xl-5 pr-lg-4">
+                     <div class="footer-logo mb-3">
+                        <img src="images/logo.svg" class="img-fluid d-block" alt="Snap">
+                     </div>
+                     <p class="text-white font-weight-medium">Lorem ipsum dolor sit amet, consetetur sadipscing
+                        elitr, sed diam onumy eirmod tempor invidunt ut.
+                     </p>
+                  </div>
+               </div>
+               <div class="col-lg-8">
+                  <div id='footer-list' class="row">
+                     <div class="col-lg-4">
+                        <div class="footer-link mt-lg-0 mt-4">
+                           <h4 class="lead font-weight-bold text-white mb-3">Company</h4>
+                           <ul class="list-unstyled">
+                              <li><a href="#">About Us</a></li>
+                              <li><a href="#">Blogs</a></li>
+                              <li><a href="#">Team</a></li>
+                              <li><a href="#">Shop</a></li>
+                              <li><a href="#">Contact</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-lg-4">
+                        <div class="footer-link mt-lg-0 mt-4">
+                           <h4 class="lead font-weight-bold text-white mb-3">Services</h4>
+                           <ul class="list-unstyled">
+                              <li><a href="#">Spa</a></li>
+                              <li><a href="#">Hair Cut</a></li>
+                              <li><a href="#">Massage</a></li>
+                              <li><a href="#">Makeup</a></li>
+                              <li><a href="#">Bridal</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-lg-4">
+                        <div class="footer-link mt-lg-0 mt-4">
+                           <h4 class="lead font-weight-bold text-white mb-3">Quick Links</h4>
+                           <ul class="list-unstyled">
+                              <li><a href="#">FAQ</a></li>
+                              <li><a href="#">Appointment</a></li>
+                              <li><a href="#">Terms & Conditions</a></li>
+                              <li><a href="#">Privacy Policy</a></li>
+                              <li><a href="#">My Account</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-12">
+                  <div class="pt-lg-5 pt-4 mt-lg-5 mt-4 border-top">
+                     <p class="small text-center font-weight-medium text-white">&copy; 2021 Snap. All Right Reserved.
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- SCRIPT -->
+      <script>
+         //............................................................................. header dynamic profile pic.........................................................................
+         
+         
+         //............................................................................. header and hide tabs.........................................................................
+         var token = localStorage.getItem("token");
+         if(token==null){
+         var form = new FormData()
+         form.append('site_id', '1')
+         form.append('slug', 'header')
+         
+         
+         var settings = {
+          url: `${constant().baseurl}/navigation/get`,
+          method: 'POST',
+          timeout: 0,
+          headers: {
+            Accept: 'application/json'
+          },
+          processData: false,
+          mimeType: 'multipart/form-data',
+          contentType: false,
+          data: form
+         }
+         
+         $.ajax(settings).done(function (response) {
+          // console.log(response);
+          $('#navlist')
+            .empty()
+            .append(
+              JSON.parse(response).data.map(RD => {
+                return `<li class="nav-item">
+                            <a class="nav-link" href="${RD.url}">${RD.title}</a>
+                        </li>`
+              })
+            )
+         })
+         $.ajax(settings).fail(function (res, err) {
+          console.log('Response', res.status)
+          if (res.status == 0) {
+            console.log('Header internet issue')
+            Swal.fire('Failed!!', 'Please Check your internet connection ', 'error')
+          } else {
+            Swal.fire('Failed!!', 'Please Check Server or Contact Admin ', 'error')
+          }
+         })
+         }
+         else{
+         //hide partner and signup tabs
+         $("#forpartner").hide();
+         $("#forsignup").hide();
+         }
+      </script>
+      <script>
+         //......................................................................... profile show..........................................................
+         		var token = localStorage.getItem("token");
+         		if(token==null){
+         			Swal.fire(
+         					'Failed!!',
+         					'Please login in continue ',
+         					'error'
+         				);
+         				window.location.replace('login.html');
+         		}
+         		else{
+         		//.....................................................update profile form..................................
+         		$("#formRow").submit(e => {
+         			e.preventDefault();
+         			$.ajax({
+         				url: `${constant().baseurl}/customer/update-profile`,
+         				headers: {
+         					"Accept": "application/json",
+         
+         					"Authorization": `Bearer ${token}`
+         				},
+         				data: new FormData($("#formRow > form")[0]),
+         				type: "POST",
+         				"processData": false,
+         				"mimeType": "multipart/form-data",
+         				"contentType": false,
+         				success: result => {
+         					swal.fire({
+         						title: "Success ",
+         						text: "Your Account has been updated Successfully",
+         						type: "success"
+         					}).then(function () {
+         						window.location = "setting.html";
+         					});
+         				}
+         			})
+         		})
+         		console.log(token);
+         		//..........................................................profile view................................
+         		var settings = {
+         			"url": `${constant().baseurl}/customer/profile`,
+         			"method": "GET",
+         			"timeout": 0,
+         			"headers": {
+         				"Accept": "application/json",
+         
+         				"Authorization": `Bearer ${token}`
+         			},
+         		};
+         
+         		$.ajax(settings).done(function (response) {
+         			console.log(response);
+         
+         			if(response.data.sms==1){
+         				document.getElementById('settingtoggle').checked =true;
+         				// $('#settingtoggle').is(':checked', true)
+         			}
+         			else{
+         				document.getElementById('settingtoggle').checked =false;
+         				// $('#settingtoggle').is(':checked', false)
+         			}
+         			
+         			if(response.data.newsletter==1){
+         				document.getElementById('newstoggle').checked =true;
+         				// $('#newstoggle').is(':checked', true)
+         			}
+         			else{
+         				document.getElementById('newstoggle').checked =false;
+         				// $('#newstoggle').is(':checked', false)
+         			}
+         			$("#fname").val(response.data.name);
+         			$("#pcode").val(response.data.post_code);
+         			$("#email").val(response.data.email);
+         			$("#city").val(response.data.city);
+         			$("#country").val(response.data.country);
+         			$("#phone").val(response.data.phone);
+         			// $("#email").val(response.data.email);
+         			console.log(response.data.user_profile_image);
+         			localStorage.setItem('picture',response.data.user_profile_image);
+         			var displayPic ='';	
+         			if (response.data.user_profile_image !== null) {
+         				console.log('here');
+         				displayPic = `https://www.snap.getboxxie.com/${response.data.user_profile_image}`
+         			}
+         			else{
+         				console.log('here1')
+         				displayPic= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpmReRSYBQ1Be5MYdqoXQTZztaBTbjgeGSfA&usqp=CAU"
+         			}
+
+                   	if (response.data.user_profile_image===null) {
+         		document.getElementById("mobProfilePic").src = 'images/user.jpg';
+         		document.getElementById("mobDropdownPic").src = 'images/user.jpg';
+         		document.getElementById("deskProfilePic").src = 'images/user.jpg';
+         		document.getElementById("deskDropdownProfilePic").src = 'images/user.jpg';
+         	}
+         	else {
+         		document.getElementById("mobProfilePic").src = `https://www.snap.getboxxie.com/${response.data.user_profile_image}`;
+         		document.getElementById("mobDropdownPic").src = `https://www.snap.getboxxie.com/${response.data.user_profile_image}`;
+         		document.getElementById("deskProfilePic").src = `https://www.snap.getboxxie.com/${response.data.user_profile_image}`;
+         		document.getElementById("deskDropdownProfilePic").src = `https://www.snap.getboxxie.com/${response.data.user_profile_image}`;
+         	}
+         			$("#userProfile").empty().append(
+         				`
+         	  <div >
+         						<div class="card-setting-image">
+         							<img src="${displayPic}"  class="img-fluid img-full" alt="">
+         						</div>
+         
+         
+         						<div class="card-setting-content">
+         							<div class="section-title mb-2">
+         								<h2 class="title-md text-dark font-weight-bold">${response.data.name}</h2>
+         							</div>
+         
+         							<p class="text-center">
+         								<a id="editbutton" href="#" class="text-primary font-weight-medium">Edit Profile</a>
+         									
+         	<script>${'$'}('#editbutton').click(function (event)
+         		{console.log('Hello apiii');
+         		$("#formRow").show();
+         		$("#paymentmethod").hide();
+         		$("#tooglemethod").hide();
+         	
+         	
+         	});
+         	<${'/'}script>
+         	</p>
+         	</div>
+         
+         	<div class="card-setting-info mt-4 text-left px-sm-3">
+         		<div class="text-dark mt-3">
+         			<p class="font-weight-bold">Mobile phone</p>
+         			<p class="font-weight-normal">${response.data.phone}</p>
+         		</div>
+         
+         		<div class="text-dark mt-3">
+         			<p class="font-weight-bold">Email</p>
+         			<p class="font-weight-normal">${response.data.email}</p>
+         		</div>
+         	</div>
+         	</div>`
+         
+         	
+         			)
+         		});
+         		$.ajax(settings).fail(function (res, err) {
+         			console.log("Response", res.status);
+         			if (res.status == 0) {
+         
+         				console.log("internet issue");
+         				Swal.fire(
+         					'Failed!!',
+         					'Please Check your internet connection ',
+         					'error'
+         				);
+         
+         			}
+         			else {
+         				Swal.fire(
+         					'Failed!!',
+         					'Please Check Server or Contact Admin ',
+         					'error'
+         				);
+         			}
+         		});
+         
+         	}
+         
+         	
+         
+      </script>
+      <script>
+         //............................................................................ toogle message ..................................................................
+         function function1() {
+         
+         	var settings = {
+         			"url": `${constant().baseurl}/customer/toggle-message-status/sms`,
+         			"method": "GET",
+         			"timeout": 0,
+         			"headers": {
+         				"Accept": "application/json",
+         				"Authorization": `Bearer ${token}`
+         			},
+         		};
+         		$.ajax(settings).done(function (response) {
+         			console.log("This is the response from sms toggle api")
+         			console.log(response);
+         
+         		});
+         		$.ajax(settings).fail(function (res, err) {
+         			console.log("Response", res.status);
+         			if (res.status == 0) {
+         
+         				console.log("internet issue");
+         				Swal.fire(
+         					'Failed!!',
+         					'Please Check your internet connection ',
+         					'error'
+         				);
+         
+         			}
+         			else {
+         				Swal.fire(
+         					'Failed!!',
+         					'Please Check Server or Contact Admin ',
+         					'error'
+         				);
+         			}
+         		});
+         
+         	
+         }
+         
+         function function2() {
+         	var form = new FormData();
+         var settings = {
+           "url": `${constant().baseurl}/customer/toggle-message-status/newsletter`,
+           "method": "GET",
+           "timeout": 0,
+           "headers": {
+             "Accept": "application/json",
+         	"Authorization": `Bearer ${token}`
+           },
+           "processData": false,
+           "mimeType": "multipart/form-data",
+           "contentType": false,
+           "data": form
+         };
+         
+         $.ajax(settings).done(function (response) {
+           console.log('NewsLetter API successMessage: ', response);
+         });
+         $.ajax(settings).fail(function (res, err) {
+         	console.log("This is the response from news letter toggle api")
+         			console.log("Response", res.status);
+         			if (res.status == 0) {
+         
+         				console.log("internet issue");
+         				Swal.fire(
+         					'Failed!!',
+         					'Please Check your internet connection ',
+         					'error'
+         				);
+         
+         			}
+         			else {
+         				Swal.fire(
+         					'Failed!!',
+         					'Please Check Server or Contact Admin ',
+         					'error'
+         				);
+         			}
+         		});
+         }
+         
+         	
+      </script>
+      <script>
+         //................................................................................footer...............................................................................
+         var form = new FormData()
+         form.append('site_id', '1')
+         form.append('slug', 'footer')
+         
+         var settings1 = {
+           url: `${constant().baseurl}/navigation/get`,
+           method: 'POST',
+           timeout: 0,
+           headers: {
+         	Accept: 'application/json'
+           },
+           processData: false,
+           mimeType: 'multipart/form-data',
+           contentType: false,
+           data: form
+         }
+         
+         $.ajax(settings1).done(function (response) {
+           // console.log(response);
+           $('#footer-list')
+         	.empty()
+         	.append(
+         	  JSON.parse(response).data.map(RD => {
+         		return `<div class="col-lg-4">
+         					<div class="footer-link mt-lg-0 mt-4">
+         						<h4 class="lead font-weight-bold text-white mb-3">${
+         						  RD.title
+         						}</h4>
+         
+         						<ul class="list-unstyled">
+         							${RD.subtabs.map(
+         							  ST =>
+         								`<li><a href="${ST.url == null ? "#" : ST.url}">${ST.title}</a></li>`
+         							)}
+         							
+         						</ul>
+         					</div>
+         				</div>`
+         	  })
+         	)
+         })
+         $.ajax(settings1).fail(function (res, err) {
+           console.log('Response', res.status)
+           if (res.status == 0) {
+         	console.log('Footer internet issue')
+         	Swal.fire('Failed!!', 'Please Check your internet connection ', 'error')
+           } else {
+         	Swal.fire('Failed!!', 'Please Check Server or Contact Admin ', 'error')
+           }
+         })
+         //.....................................................................footer end here..............................................................................
+         
+      </script>
+   </body>
 </html>

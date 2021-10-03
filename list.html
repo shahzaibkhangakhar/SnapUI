@@ -1861,10 +1861,29 @@
 											<span class="small font-weight-medium text-light">${RD.total_reviews} reviews</span>
 										</div>
 
-										<div class="card-detail-map font-weight-bold text-dark">
+										<div class="card-detail-map font-weight-bold text-dark"
+										data-toggle="modal" data-target="#mapModal"
 											<i class="icon icon-map"></i>
 											<a href="javascript:void(0)">Show on map</a>
 										</div>
+										<div class="modal" id="mapModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Location</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d116862.54554679655!2d90.40409584970706!3d23.749000170125925!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1550040341458" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        
+      </div>
+    </div>
+  </div>
 
 										<div class="card-detail-desc">
 											<p>${RD.description == null ? "Lorem ipsum dummy placeholder" : RD.description}</p>
@@ -1903,13 +1922,14 @@
 							</ul>
 							<!-- End Service Name & Price -->
 
-							<a href="#" id=${RD.id} type="submit" class="card-service-view-more font-weight-bold viewmorebutton"
+							<a href="#" id=${RD.id} type="submit" class="btn btn-primary btn-block viewmorebutton"
 								data-toggle="modal" data-target="#modalProfile">
-								View more <i class="icon icon-chevron-down ml-1"></i>
+								View more <i class="icon icon-chevron-down ml-1 d-none"></i>
 							</a>
-	<div class="text-center mt-3">
-								<a href="#" type="button" data-toggle="modal" data-target="#modalProfile"
-									class="btn btn-primary btn-block">Book now</a>
+							<div class="text-center mt-3 d-none">
+									<a href="#" type="button" data-toggle="modal" data-target="#modalProfile"
+										class="btn btn-primary btn-block">Book now
+									</a>
 							</div>
 						</div>
 						</div>
@@ -1968,18 +1988,23 @@
 										</div>
 
 										<p class="about-desciption lead font-weight-normal text-dark">${AB.description == null ? "Lorem ipsum dummy placeholder" : AB.description}</p>
-
+										
 										<!-- ABOUT SERIVCE LIST -->
 										<ul class="about-facility-list list-unstyled accordion" id="timeAccordion">
 											
 											<li class="about-facility-list-item" type="button" data-toggle="collapse"
 												data-target="#timeOne" aria-expanded="false" aria-controls="timeOne">
 												<i class="icon icon-clock"></i>
-												<span>Open now 9:00 - 18:30</span>
-												<i class="icon icon-chevron-down"></i>
-											</li>
+												<span>Shop: ${AB.open_now}</span>
+												<i class="icon icon-chevron-down d-none"></i>
+												</li>
 
-											<div id="timeOne" class="collapse" aria-labelledby="headingOne"
+												<li class="about-facility-list-item">
+													<i class="icon icon-bolt"></i>
+													<span>Instant confirmation: ${AB.venue_confirmation}</span>
+												</li>
+												
+												<div class="d-none" id="timeOne" class="collapse" aria-labelledby="headingOne"
 												data-parent="#timeAccordion">
 												<div class="accordion-content">
 													${AB.working_hours.map(ST => `
@@ -2010,10 +2035,6 @@
 												<span>${AB.address}</span>
 											</li>
 
-											<li class="about-facility-list-item">
-												<i class="icon icon-bolt"></i>
-												<span>Instant confirmation</span>
-											</li>
 
 											<li class="about-facility-list-item">
 												<i class="icon icon-unisex"></i>
