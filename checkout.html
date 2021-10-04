@@ -839,6 +839,18 @@ if(keys==null){
 
 				$.ajax(settings).done(function (response) {
 					console.log(response);
+					console.log(JSON.parse(response).status)
+
+					if(JSON.parse(response).status=="false"){
+					swal.fire({
+						title: "Error",
+						text: JSON.parse(response).message,
+						type: 'error'
+					}).then(function () {
+						window.location.replace('list.html');
+					});
+				}
+				else{
 					swal.fire({
 						title: "Success",
 						text: "Booking Successfull",
@@ -846,7 +858,8 @@ if(keys==null){
 					}).then(function () {
 						window.location.replace('appointment.html');
 					});
-					
+
+				}
 		
 
 				});
